@@ -1,0 +1,9 @@
+[テーマ作成]
+1. index.html / CSS
+2. WordPressのテーマに変換
+3. index.phpを完成させる
+4. page.php/single.php(固定ページ)
+
+[補足]
+・screenshot.jpg、screenshot.pngをルートに配置
+	→管理メニューのテーマ選択時に画像が表示

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Google Feed APIの練習</title>
+	</head>
+	<body>
+		<ul id="feed"></ul>
+
+		<script src="https://www.google.com/jsapi"></script>
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script type="text/javascript">
+			google.load("feeds", "1");
+
+			function initialize(){
+				// 文字列からFeedを検索する
+				var query = "ドットインストール";
+				google.feeds.findFeeds(query, function(result){
+					if (!result.error) {
+						console.log(result);
+					}
+				});
+			}
+
+			google.setOnLoadCallback(initialize);
+		</script>
+	</body>
+</html>

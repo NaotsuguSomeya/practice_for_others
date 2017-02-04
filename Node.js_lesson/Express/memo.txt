@@ -1,0 +1,45 @@
+[Express]
+	Node.js用のWebアプリフレームワーク
+
+[インストール]※Express 4
+	sudo npm install -g express-generator
+
+[Help]
+	express -h
+
+[雛形作成]
+	express sampleApp
+
+[依存ライブラリインストール]
+	cd sampleApp && npm install
+
+[起動]
+	npm start
+	※デフォルト3000ポートでアクセス
+	※ctrl-cで終了
+
+[myApp]
+	npm install express
+	起動：node app(.jsは省略可能)
+
+[logパッケージ]
+	npm install morgan
+
+[再起動不要パッケージ]
+	sudo npm install nodemon -g
+	起動：nodemon app.js(.jsは省略不可！)
+
+[ejsテンプレート]
+	npm install ejs
+
+[express.json, express.urlencoded は 別パッケージ]
+	npm install body-parser
+
+[PUT/DELETEメソッド用パッケージ]
+	npm install method-override
+	npm install --save connect
+
+[CSRF関連]
+	npm install --save express-session
+	npm install --save cookie-parser
+	npm install --save csurf

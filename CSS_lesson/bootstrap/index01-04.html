@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrapの練習</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <!-- <h1>Hello, world!</h1> -->
+		<!--  class="container" : 中央揃え -->
+		<div id="header" class="container" style="background:red;">headeer</div>
+
+		<div class="container">
+			<!-- グリッドシステム：12に分割 -> rowで囲んでcol-sm-nの合計が12になるようにする -->
+			<!-- sm : small ->比較的小さいブラウザ用→小さくなると縦に並ぶ（スマホに対応） -->
+			<!-- http://getbootstrap.com/css/#grid -->
+			<div class="row">
+				<!-- hidden-xs : 小さくなったときに隠す -->
+				<div class="col-sm-3 hidden-xs" style="background:grey;">
+					Side 1
+				</div>
+				<div class="col-sm-6 col-xs-6" style="background:green;">
+					Main
+				</div>
+				<div class="col-sm-3 col-xs-6" style="background:orange;">
+					Side 2
+				</div>
+			</div>
+		</div>
+
+		<div id="footer" class="container" style="background:blue;">footer</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

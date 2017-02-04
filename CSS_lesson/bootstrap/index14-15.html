@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrapの練習</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+		<div class="container" style="padding:20px 0;">
+			<p>Product A <span class="label label-primary">NEW!</span></p>
+			<p>Inbox <span class="badge">20</span></p>
+			<!-- 内容がないと自動的にアイコンも消える -->
+			<p>Inbox <span class="badge"></span></p>
+			<!-- 警告パネル -->
+			<div class="alert alert-info">
+				<!-- お知らせの削除ボタン（右端） -->
+				<button class="close" data-dismiss="alert">&times;</button>
+				お知らせ！
+			</div>
+			<!-- パネル -->
+			<div class="panel panel-primary">
+				<!-- ヘッダ -->
+				<div class="panel-heading">
+					お知らせ
+				</div>
+				<!-- ボディ -->
+				<div class="panel-body">
+					こんにちわ！
+				</div>
+			</div>
+			<!-- プログレスバー -->
+			<div class="progress">
+				<div class="progress-bar progress-bar-primary" style="width:60%;"></div>
+			</div>
+			<!-- active : progress-stripedと合わえて使用。ストライプが動く。 -->
+			<div class="progress progress-striped active">
+				<div class="progress-bar progress-bar-info" style="width:40%;"></div>
+				<div class="progress-bar progress-bar-primary" style="width:30%;"></div>
+				<div class="progress-bar progress-bar-warning" style="width:20%;"></div>
+			</div>
+			<!-- Modalウィンドウ -->
+			<a data-toggle="modal" href="#myModal" class="btn btn-primary">Show Me!</a>
+			<div class="modal fade" id="myModal">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">My Modal</h4>
+						</div>
+						<div class="modal-body">
+							こんにちは！こんにちは！こんにちは！
+							<br>
+							こんにちは！こんにちは！こんにちは！
+							<br>
+							こんにちは！こんにちは！こんにちは！
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-primary" data-dismiss="modal">OK</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

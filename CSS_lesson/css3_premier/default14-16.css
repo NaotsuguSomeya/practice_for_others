@@ -1,0 +1,64 @@
+/*
+影
+ - box-shadow
+ - text-shadow
+*/
+
+body {
+	background: #eee;
+}
+
+.shadow {
+	width: 100px;
+	height: 50px;
+	margin-bottom: 20px;
+	background: #fff;
+	/* 第３引数：ぼかし 第４引数：影の大きさ(マイナスもOK) inset:内側につける  カンマ区切りで複数の影設定*/
+	box-shadow: 10px 20px 4px 10px rgba(0,0,0,.4) inset,10px 10px 4px 5px skyblue;
+}
+
+/* 第４引数はつけられない、insetｈつけられない */
+h1 {
+	box-shadow: 2px 2px 2px rgba(0,0,0,.4),2px 2px 2px skyblue;
+}
+
+/* 要素変形 */
+.box {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 20px;
+	position: abosolute;
+	top: 100px;
+	left: 100px;
+}
+
+.box1 {
+	background: blue;
+	opacity: .5;
+}
+
+.box2 {
+	background: orange;
+	opacity : .5;
+	/*transform: translate(20px, 40px);*/
+	/*transform: translateX(20px);*/
+	/*transform: scale(0.5, 1.5); /*倍率を指定：scaleX, scaleYも可*/
+	/*transform: skew(20deg, 20deg); /*傾斜*/
+	/*transform: rotate(30deg); /*回転*/
+	/*trandformの起点は中心なので、変えたい場合は↓*/
+	transform-origin: 0,0;
+}
+
+/*
+ベンダープレフィックス
+firefox : -moz-
+opera : -o-
+chrome,safari : webkit
+ie : -ms-
+*/
+.box1 {
+	/*Firefoxでは↓を採用*/
+	-moz-transform: rotate(30deg);
+	/*それ以外では↓を採用*/
+	transform: rotate(30deg);
+}

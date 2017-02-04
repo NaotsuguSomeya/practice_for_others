@@ -1,0 +1,19 @@
+# 配列、ハッシュ
+
+# names:
+#   - someya
+#   - yocchan
+# score:
+#   - 90
+#   - 100
+
+# names: [someya, yocchan]
+# score: [90, 100]
+
+# - name: someya
+#   score: 90
+# - name: yocchan
+#   score: 100
+
+- {name: someya, score: 90}
+- {name: yocchan, score: 100}

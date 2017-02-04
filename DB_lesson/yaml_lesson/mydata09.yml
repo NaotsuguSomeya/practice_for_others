@@ -1,0 +1,16 @@
+# << アンカーのマージ
+common: &common
+  user: dbuser
+  passwd: dbpassword
+
+development:
+  database: myapp_dev
+  <<: *common
+
+production:
+  database: myapp_pro
+  <<: *common
+
+test:
+  database: myapp_test
+  <<: *common

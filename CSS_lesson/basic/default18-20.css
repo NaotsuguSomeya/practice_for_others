@@ -1,0 +1,73 @@
+/*
+[display]
+	- block
+	- inline
+	- list-item
+	- inline-block
+*/
+
+h1, p, span, a {
+	border: 1px solid #ddd;
+}
+
+h1, p {
+	/*display: inline;*/
+	/* display: inline だと幅と高さの指定が無効になる */
+	width: 120px;
+	display: inline-block;
+}
+
+span {
+	display: none;
+}
+
+/* dsplay: table */
+.container {
+	display: table;
+	width: 900px;
+}
+.box {
+	display: table-cell;
+	width: 300px;
+}
+.row {
+	display: table-row;
+}
+.grey { background: gray;}
+.silver { background: silver;}
+.orange { background: orange;}
+.red { background: red;}
+.blue { background: blue;}
+.green { background: green;}
+
+/*
+[position]
+	static(default)
+	relative
+	fixed
+	absolute
+*/
+#box1 {
+	width: 100px;
+	height: 50px;
+	background: gray;
+	/*position: relative;*/
+	/*position: fixed;
+	top: 10px;
+	left: 10px;*/
+}
+#box2 {
+	width: 100px;
+	height: 50px;
+	background: silver;
+	/*position: static;*/
+	position: relative;
+}
+#box3 {
+	width: 50;
+	height: 25px;
+	background: orange;
+	position: abusolute;
+	top: 10px;
+	left: 10px;
+}

@@ -1,0 +1,22 @@
+# アンカー(&)とエイリアス(*)
+- &leader someya
+- *leader
+- &staff sakucchan
+- *staff
+- *staff
+- *staff
+- *staff
+
+- &someya
+  name: someya
+  score: 80
+- &yocchan
+  name: yocchan
+  score: 100
+  friends:
+    - *someya
+- name: sakucchan
+  score: 70
+  friends:
+    - *someya
+    - *yocchan

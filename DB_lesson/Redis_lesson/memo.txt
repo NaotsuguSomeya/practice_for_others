@@ -1,0 +1,109 @@
+[インストール]
+sudo apt install redis-server
+
+[バージョン]
+redis-server --version
+
+[用語]
+* KVS (Key Value Store)
+
+* valueのData Type
+	- String : 個々の要素
+	- List : 順番に並べた複数要素（先頭、末尾の追加可能）
+	- Set : 順不同の複数要素、重複不可
+	- Sorted Set : Setでかつ、個々の要素にスコア付き
+	- Hash : 連想配列（ラベルと値のセット）
+
+[サーバ起動/終了]
+$ redis-server
+ (ctrl+c)
+
+[クライアント起動/終了]
+$ redis-cli
+> exit
+> shutdown(サーバ終了)
+
+[データベース選択]
+> select NO : 0-10を選択（名前はつけられない）
+
+[データ保存]※立ち上げたディレクトリに「dump.rdb」が作成される
+> bgsave
+
+[データ格納]
+String
+	set key value
+	mset key value key value
+
+	get key
+	mget key key key
+
+	- 整数値の増減
+	incr / incrby
+	decr / decrby
+
+KEY
+	keys *: キー一覧
+	exists <keyname> : 存在チェック(0:false / 1:true)
+	rename <old keyname> <new keyname> : キー名変更
+	del <keyname> : キー削除
+	expire <keyname> 5 : ５秒間の有効期限をつける
+	randomkey : ランダムなキー名を取得（set済み）
+
+List
+	[key] [values]
+	(l/r)push : 追加
+		rpush <list> violet
+		lpush <list> violet
+	(l/r)pop : 削除
+		rpop <list>
+		lpop <list>
+	lrange <list> i j :i〜j番目までのlist要素（※jに[-1]を指定して末尾）
+	lindex <list> i : i番目の要素取り出し
+	llen <list> : 要素数
+	ltrim <list> i j : i〜j番目以外を削除
+
+Set
+	追加 : sadd <set name> xxx
+	削除 : srem <set name> xxx
+	一覧 : smembers <set name>
+	和集合 : sunion <set name 1> <set name 2>
+	積集合 : sinter <set name 1> <set name 2>
+	差集合 : sdiff <set name 1> <set name 2>
+	集合から別set作成 : s---store <new set name> <set name 1> <set name 2>
+												ex) sunionstore myunion myset1 myset2
+
+Sorted Set
+	追加 : zadd <set name> n xxx
+	削除 : zrem <set name> xxx
+	一覧 : zrange <set name> i j
+	一覧(逆順) : zrevrange <set name> i j
+	ランク(0始まり) : zrank <set name> xxx
+
+Hash
+	hset <hashname> key value
+	hmset <hashname> key value key value
+	hget <hashname> key
+	hmget <hashname> key key key
+	hlen <hashname>
+	hkeys <hashname>
+	hvals <hashname>
+	hgetall <hashname>
+
+Sort
+	- List
+	- Set
+	- Sorted Set
+	type <xxx> : 型確認
+	sort <listname> : 昇順
+	sort <listname> desc : 降順
+	sort <listname> limit i: 昇順(上位i番)
+	sort <listname> alpha: 文字列に対応
+	sort <setname> : Setも同様
+
+Transaction
+	multi
+	処理1
+	処理2
+	処理3
+	exec(コミット)/discard(ロールバック)
+	※途中で処理が落ちた場合、ロールバックされないので注意！

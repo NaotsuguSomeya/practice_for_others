@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Riot.jsの練習</title>
+		<script src="../../../commonlib/riot-2.6.3/riot+compiler.min.js"></script>
+	</head>
+	<body>
+		<login></login>
+	  <!-- include the tag -->
+	  <script src="login.js" type="riot/tag"></script>
+	  <!-- mount the tag -->
+		<script>riot.mount('login', auth)</script>
+	</body>
+</html>

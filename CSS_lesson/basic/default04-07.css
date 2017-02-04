@@ -1,0 +1,56 @@
+/*
+	セレクタ {プロパティ名: 値;}
+	a, b	: 同じスタイルを複数のセレクタに適用
+	a b		: a階層のb要素すべて（再帰的に全部）
+	a > b	: a直下にあるb要素に適用
+	a + b	: aの次にあるb要素
+	ab
+*/
+/*h1, p { color: lightgreen;}*/
+/*div span { color: lightgreen;}*/
+/*div > span { color: lightgreen;}*/
+/*p + p { color: lightgreen;}*/
+p.points { color: lightgreen;}
+
+/*
+	属性セレクタ
+	a[title] : aタグでtitle属性のあるもののみ
+	a[class~="xxx"] : aタグのclassに"xxx"が含まれているもの（"~="で部分一致）
+*/
+/*a[title] {color: green;}*/
+a[href="https://www.google.co.jp/"] {color: orange;}
+
+a[class~="search"] {color: red}
+
+/*
+	擬似クラス:ある要素の状態を指定
+	※CSS2まではfirst-childしか指定できない
+	  CSS3からどこでも指定可能
+*/
+ul li:first-child { color : gold;}
+
+input:focus {background : skyblue;}
+
+/*リンクの擬似クラスは下記順番をまもる*/
+/*未訪問*/
+a:link { color: grey;}
+/*訪問済み*/
+a:visited { color: violet;}
+/*マウスが乗った時*/
+a:hover { color: green;}
+/*マウスクリック時*/
+a:active { color: red;}
+
+/*擬似要素：ある要素の一部を指定*/
+/*最初の１行*/
+h4:first-line {color: yellow}
+/*最初の１文字*/
+h4:first-letter {color: blue}
+/*要素の前に要素を入れる(contentが必須)*/
+p:before {
+	content: "--> ";
+}
+/*要素の後に要素を入れる(contentが必須)*/
+p:after {
+	content: " <--";
+}

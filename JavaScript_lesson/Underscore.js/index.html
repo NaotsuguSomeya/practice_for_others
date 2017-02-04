@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Underscore.jsの練習</title>
+	</head>
+	<body>
+		<h1>Underscore.jsの練習</h1>
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="../../commonlib/underscore-master/underscore-min.js"></script>
+		<script>
+			$(function(){
+				// _ : Underscoreオブジェクト
+				// 配列をシャッフル
+				// 書き方１
+				var array = [2, 8, 10, 3];
+				x = _.shuffle(array);
+				console.log(x);
+				// 書き方２
+				var y = _(array).shuffle();
+				console.log(y);
+
+				// 配列をループ(戻り値なし)
+				_.each(array, function(num) {
+					console.log(num * 2);
+				});
+				// 配列をループ(戻り値あり)
+				x = _.map(array, function(num) {
+					return (num * 2);
+				});
+				console.log(x);
+
+				// find : 集合要素を検索してマッチした１番目を返す
+				x = _.find(array, function(num){
+					return num > 5;
+				});
+				console.log(x);
+				// filter : 集合要素を検索してマッチした全部を返す
+				x = _.filter(array, function(num){
+					return num > 5;
+				});
+				console.log(x);
+				// contains : 要素が含まれているか true/false
+				x = _.contains(array, 10);
+				console.log(x);
+				// groupBy : 集合要素をグルーピング
+				x = _.groupBy(array, function(num){
+					return num % 3;
+				});
+				console.log(x);
+				// countBy : グルーピング後の集合要素の数
+				x = _.countBy(array, function(num){
+					return num % 2 == 0 ? 'even' : 'odd';
+				});
+				console.log(x);
+				// sortBy : 集合要素の並び替え
+				x = _.sortBy(array, function(num){
+					return Math.sin(num);
+				});
+				console.log(x);
+				// プロパティでソート
+				x = _.sortBy(["me", "i", "and"], 'length');
+				console.log(x);
+				// union : 和集合
+				var a = [1, 2, 5];
+				var b = [5, 2, 8];
+				x = _.union(a, b);
+				console.log(x);
+				// intersection : 積集合
+				x = _.intersection(a, b);
+				console.log(x);
+				// difference(a, b) : 差分(bにないaの要素)
+				x = _.difference(a, b);
+				console.log(x);
+				// uniq : ユニークな要素のみ抽出
+				x = _.uniq([2,2,2,5,5,5,10,5,5,2]); // 2, 5, 10
+				console.log(x);
+				// オブジェクトに対して使えるメソッド
+				var user = {
+					name: 'someya',
+					score: 90,
+					email: 'someya@gmail.com'
+				}
+				// keys : オブジェクトのkeyだけ抽出
+				x = _.keys( user );
+				console.log(x);
+				// values : オブジェクトのvalueだけ抽出
+				x = _.values( user );
+				console.log(x);
+				// invert : オブジェクトのkeyとvalueを入れ替え
+				x = _.invert( user );
+				console.log(x);
+				// has : オブジェクトのkeyがあるか否か true/false
+				x = _.has( user, "name" );
+				console.log(x);
+				// isEmpty, isString, isNull, isNumber : true/false
+				x = _.isString( user.score );
+				console.log(x);
+				// データ生成系
+				// range : 第２引数未満の配列作成
+				// 					※第１引数省略時は０から
+				// 					※第３引数省略時は１飛び
+				x = _.range(1, 11, 2);
+				console.log(x);
+				// random : 乱数(※第１引数省略時は０から)
+				x = _.random(3, 10);
+				console.log(x);
+				// escape : エスケープ文字に変換
+				x = _.escape('<script>');
+				console.log(x);
+				// times : 繰り返し処理
+				_.times( 5, function(){
+					console.log('hello');
+				});
+				// chain : メソッドをつなげる
+				var xx;
+				var aa = [2, 5, 10, 8];
+				xx = _.chain(aa)
+							.shuffle()
+							.map(function(num) {
+								return num * 2;
+							})
+							.value();
+				console.log(xx);
+				// template: テンプレート機能
+				// <% %> : JavaScriptの命令を
+				// <%= %> : 値の出力
+				// <%- %> : 値の出力（エスケープあり）
+				var tpl = "<li><%- name %> (<%- score %>)</li>";
+				var msg = _.template( tpl, user );
+				x = msg(user); // 変数が関数名になる ※Underscore.js 1.7.0以降
+				console.log(x);
+			});
+		</script>
+	</body>
+</html>

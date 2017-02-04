@@ -1,0 +1,75 @@
+/*
+文字の大きさ
+ - rem : emの拡張(rootに対するem)
+色
+ - rgba
+	  red / green / blue / alpha(透明度：0-1)
+ - hs1 / hsla
+    hue : 色相（カラーホイールのどの角度を使うか：0-360）
+		satulation : 鮮やかさ(彩度:0-100%)
+		lightness : 明るさ::0-100%
+		alpha : 透明度：0-1
+透明度
+ - opacity : 透明度：0-1
+属性セレクタ
+ - a[href]
+ - a[href="foo"]
+ - a[href~="foo"] 値がスペースで区切られた項目リストであり、うち 1 つが正確に "foo" である属性を持つ要素
+ - ★追加： a[href^="foo"] 前方一致
+ - ★追加： a[href$="foo"] 後方一致
+ - ★追加： a[href*="foo"] 含む
+*/
+html {
+	font-size: 32px;
+}
+
+body {
+	background: lightgreen;
+}
+h1 {
+	font-size: 2rem;
+	/* 32 * 2 = 64px */
+}
+
+span {
+	font-size: 0.5rem;
+	/* 32 *0.5 = 16px */
+}
+
+div {
+	width: 50px;
+	height: 25px;
+}
+
+#box1 {
+	background: rgb(255, 100, 100);
+}
+
+#box2 {
+	background: rgba(255, 100, 100, .2);
+}
+
+#box3 {
+	background: hsla(210, 100%, 50%, .7);
+}
+
+#box4 {
+	background: hsla(210, 100%, 30%, .7);
+}
+
+img {
+	border: 7px solid blue;
+	opacity: 0.3
+}
+
+a[href^="http"] {
+	color: orange
+}
+
+a[href$="com"] {
+	background: blue;
+}
+
+a[href*=".co.jp"] {
+	background: green;
+}

@@ -1,0 +1,20 @@
+[バージョン]
+mysql --version
+
+[接続]
+mysql -u username -p
+
+[DB作成]
+create database dbname;
+
+[ユーザー作成]
+grant all on dbname.* to username@localhost identified by 'pass';
+
+[DB切り替え]
+use dbname;
+
+[テーブル詳細]
+desc tablename;
+
+[縦並び]
+select * from xxx \g

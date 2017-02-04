@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- ng-app : AngularJSのアプリであることを明示的に記載する -->
+<html lang="ja" ng-app="myapp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJSの練習</title>
+		<script src="../../../commonlib/angular-1.5.8/angular.min.js"></script>
+		<script src="./myscript.js"></script>
+	</head>
+	<body>
+		<h1>AngularJSの練習</h1>
+		<input type="text" ng-model="name">
+		<p>こんにちは！{{name}}</p>
+		<!-- JavaScriptの式が評価可能 -->
+		<p>こんにちは！{{5*3}}</p>
+		<hr>
+		<div ng-controller="MainController">
+			<p>{{users.length}} users.</p>
+			 <!-- カンマ区切り -->
+			<p>{{25 * 500|number}}</p>
+			 <!-- 通過（デフォルトはドル、:"xx"で指定可能）-->
+			<p>{{25 * 500|currency}}</p>
+			<p>{{25 * 500|currency:"￥"}}</p>
+			<!-- todayをjsで作る→dateフォーマット -->
+			<p>{{today|date:'yyyy-MM-dd'}}</p>
+			<ul>
+				<!-- ループの指定 -->
+				<li ng-repeat="user in users">
+					{{user.name}} : {{user.score}}
+				</li>
+				<hr>
+				<li ng-repeat="user in users">
+					<!-- フィルター -->
+					<!-- 大文字化（小文字化：lowercase） -->
+					{{user.name | uppercase}} :
+					<!-- 下n桁の指定 -->
+					{{user.score|number:4}}
+				</li>
+				<hr>
+				<!-- limitTo : 件数制御 -->
+				<li ng-repeat="user in users2|limitTo:5">
+					{{user.name}} : {{user.score}}
+				</li>
+				<hr>
+				<!-- orderBy : 並べ替え（'-score'で逆順） -->
+				<li ng-repeat="user in users2|orderBy:'score'|limitTo:3">
+					{{user.name}} : {{user.score}}
+				</li>
+				<hr>
+				<!-- 入力文字でフィルタ -->
+				<input type="text" ng-model="myQuery.name"> <!-- .name : カラム指定 -->
+				<li ng-repeat="user in users2|filter:myQuery">
+					{{user.name}} : {{user.score}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

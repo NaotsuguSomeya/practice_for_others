@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVGの練習</title>
+  </head>
+  <body>
+    <svg width="300" height="150">
+      <rect width="300" height="150" fill="lightblue"/>
+      <polyline points="100 50 150 100 50 100" stroke="black" fill="none" />
+    </svg>
+    <hr>
+    <svg width="300" height="150">
+      <rect width="300" height="150" fill="lightblue"/>
+      <polygon points="100 50 150 100 50 100" stroke="black" fill="none" />
+    </svg>
+    <hr>
+    <svg width="300" height="150">
+      <rect width="300" height="150" fill="lightblue"/>
+      <!-- d-> M:移動する、L:直線を引く、A:円弧を引く、H:水平線を引く、V:垂直線 -->
+      <!-- 大文字：絶対座標  小文字：相対座標 -->
+      <path d="M50 10 l50 50 h10 v50 h50" stroke="black" fill="none" />
+    </svg>
+    <hr>
+  </body>
+</html>

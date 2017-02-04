@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>ストップウォッチ with coffee script</title>
+	</head>
+	<style media="screen">
+		body {
+			background: rgb(179, 178, 171);
+			text-align: center;
+			font-size: 16px;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+		#timerText {
+			color: #00aaff;
+			font-size: 128px;
+			margin: 40px;
+			text-shadow: 0 5px 0 rgba(32, 52, 52, 0.55)
+		}
+		.btn {
+			display: inline-block;
+			width: 100px;
+			padding: 7px;
+			border-radius: 5px;
+			box-shadow: 0 4px 0 #0088cc;
+			color: white;
+			background: #00aaff;
+		}
+		.btn + .btn {
+			margin-left: 10px;
+		}
+		.btn.active {
+			opacity: 1.0;
+			cursor: pointer;
+		}
+		.btn.inactive {
+			opacity: .5;
+		}
+	</style>
+	<body>
+		<h4>ストップウォッチ with coffee script</h4>
+		<div id="timerText">0.00</div>
+		<!--
+		<button type="button" id="start">START</button>
+		<button type="button" id="stop">STOP</button>
+		<button type="button" id="reset">RESET</button>
+		-->
+		<div id="start">START</div>
+		<div id="stop">STOP</div>
+		<div id="reset">RESET</div>
+
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="../../commonlib/coffee-script.js"></script>
+    <script src="script.coffee" type="text/coffeescript"></script>
+	</body>
+</html>

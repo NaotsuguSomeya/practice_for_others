@@ -1,0 +1,27 @@
+[インストール]
+sudo apt install postgresql-client-common
+sudo apt-get install postgresql
+
+[バージョン]
+psql --version
+
+[データベース一覧]※postgresユーザで実行
+sudo -u postgres psql -l
+
+[データベース作成]
+sudo -u postgres createdb blogapp
+
+[データベース削除]
+sudo -u postgres dropdb blogapp
+
+[接続]
+sudo -u postgres psql blogapp
+
+[テーブル一覧]
+\dt
+
+[テーブル詳細]
+\d tablename
+
+[レコード縦並び]
+\x

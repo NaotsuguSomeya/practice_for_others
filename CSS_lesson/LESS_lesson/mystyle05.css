@@ -1,0 +1,18 @@
+/*
+階層構造
+*/
+header {
+  font-size: 18px;
+}
+header a {
+  color: red;
+}
+header a:hover {
+  color: green;
+}
+.button-ok {
+  color: green;
+}
+.button-ng {
+  color: red;
+}

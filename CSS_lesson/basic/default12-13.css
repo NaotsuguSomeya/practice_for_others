@@ -1,0 +1,39 @@
+/*
+[padding]:内側の余白
+	padding-top: 10px
+	padding-bottom: 10px
+	padding-left: 10px
+	padding-right: 10px
+
+	padding:
+		0個: all
+		２個: top/bottom right/left
+		3個: top right/left ottom
+		4個: top rigtht bottom left（topから右回り）
+
+[margin]:外側の余白
+	margin-top: 10px
+	margin-bottom: 10px
+	margin-left: 10px
+	margin-right: 10px
+
+	padding:
+		0個: all
+		２個: top/bottom right/left
+		3個: top right/left ottom
+		4個: top rigtht bottom left（topから右回り）
+
+		【マージンの相殺】
+		…ボックス要素が縦に並んだ場合、上のボックスbottomマージンと
+		　下のボックスtopマージンが相殺れて大きいほうが採用される
+*/
+body {height: 100%; }
+div#box1 {
+	background: lightgreen;
+	/*padding: 10px 50px;*/
+	padding: 10px 20px 30px 40px
+}
+div#box2 {
+	background: silver;
+	margin: 10px 20px 30px;
+}

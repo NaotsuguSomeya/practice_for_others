@@ -1,0 +1,74 @@
+[ドットインストール]
+●開発環境準備
+ローカル開発環境の構築 [Windows編] (全14回) or [macOS編] (全14回)
+Vagrant入門 (全13回)
+UNIXコマンド入門 (一般ユーザー編) (全16回)
+Atom入門 (全13回)
+git入門 (全22回)
+
+●HTML/CSS
+HTML入門 (全24回)
+CSS入門 (全23回)
+CSS3入門 (全19回)
+CSSレイアウト入門 (全15回)
+Bootstrap 3.0入門 (全18回)
+Sass/SCSS入門 (全15回)
+Font Awesome入門 (全7回)
+Google Web Fonts入門 (全4回)
+Chrome Developer Tools入門 (全10回)
+
+実践！ウェブサイトを作ろう (全16回)
+レスポンシブなウェブサイトを作ろう (全11回)
+パララックスサイトを作ろう (全11回)
+CSSで吹き出しを作ろう (全8回)
+
+●JavaScript
+JavaScript入門 (全24回)
+jQuery入門 (全20回)
+jQuery Mobile入門 (全21回)
+jQueryプラグイン入門 (全8回)
+jQuery UI入門 (全19回)
+CoffeeScript入門 (全15回)
+
+[※jQueryとCoffeeScriptを使って作ってみる]
+JavaScriptでおみくじを作ろう (全6回)
+JavaScriptでストップウォッチを作ろう (全8回)
+JavaScriptで5秒当てゲームを作ろう (全6回)
+JavaScriptで割り勘電卓を作ろう (全7回)
+JavaScriptでパスワードジェネレータを作ろう (全8回)
+JavaScriptで文字数チェッカーを作ろう (全8回)
+JavaScriptで作る誕生日診断 (全5回)
+JavaScriptで作る王様ゲーム (全6回)
+jQueryで作るキャラ診断 (全7回)
+jQueryで作る先頭へのジャンプ機能 (全4回)
+jQueryで作る間違い探しゲーム (全10回)
+jQueryで作るスライドショー (全8回)
+Web FontsでカウントダウンQ!! (全7回)
+
+●DataBase
+MySQL入門 (全19回)
+PostgreSQL入門 (全16回)
+
+●Ruby on Rails
+Ruby入門 (全26回)
+ActiveRecord入門 (全14回)
+Ruby on Rails 4入門 (全28回)
+
+●知っといたほうが良いかも
+Cloud9入門 (全8回)
+Amazon Web Services入門 (全17回)
+さくらのVPS入門 (全21回)
+Heroku入門 (全12回)
+YAML入門 (全11回)
+Font Awesome入門 (全7回)
+Markdown記法入門 (全8回)
+正規表現入門 (全14回)
+Haml入門 (全8回)
+
+[Ruby on Railsチュートリアル]
+http://railstutorial.jp/
+※実際にツイッターアプリを作る
+
+[Ruby on Railsガイド]
+http://railsguides.jp/
+※辞書みたいに使う感じ

@@ -1,0 +1,14 @@
+/*
+	float : 通常の配置の流れから切り離す
+	clear
+*/
+h1, h2, p, img {
+	border: 1px solid #ddd;
+}
+img {
+	float: right;
+	width: 150px;
+}
+h2 {
+	clear: right;
+}

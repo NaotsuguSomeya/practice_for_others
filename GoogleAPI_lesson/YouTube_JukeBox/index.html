@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>YouTube Juke Box</title>
+		<style media="screen">
+			body {
+				text-align: center;
+			}
+			#divPlayer {
+				width: 640px;
+				height: 360px;
+			}
+			ul {
+				list-style-type: none;
+				padding: 0;
+				margin: 0;
+			}
+			li.movie {
+				float: left;
+				width: 120px;
+				padding: 10px;
+			}
+			li.movie.on {
+				background-color: #afa;
+			}
+			li.movie.playing {
+				background-color: #f697d6;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>YouTube Juke Box</h1>
+		<hr>
+		<div id="divPlayer"></div>
+		<hr>
+		<!-- Enterキーで検索ボタン押下を実現 -->
+		<form id="search" onsubmit="return false;">
+			<input type="text" id="q">
+			<input type="submit" value="検索">
+		</form>
+		<hr>
+		<input type="button" id="prev" value="<< 前へ">
+		<input type="button" id="play" value="再生">
+		<input type="button" id="pause" value="一時停止">
+		<input type="button" id="next" value=">> 次へ">
+		<hr>
+		<ul id="videolist"></ul>
+
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="myscript.js"></script>
+		<!--     IFrame Player API -->
+		<script src="https://www.youtube.com/iframe_api"></script>
+	</body>
+</html>

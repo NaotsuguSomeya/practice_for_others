@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="js">
+	<head>
+		<meta charset="utf-8">
+		<title>Google Chart Toolsの練習</title>
+	</head>
+	<body>
+		<div id="chart"></div>
+		<!-- Google Chart Tools jsの読み込み -->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+			// Load the Visualization API and the corechart package.
+			google.charts.load('current', {'packages':['corechart']});
+
+			// Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+			function drawChart(){
+				// Googleスプレッドシートと連携
+				// ※不明！内部エラー！
+				var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1K_Kx4TgkidPoefE4Pt3d7hpKd43mSj2zGoeQfah5brE/gviz/tq');
+				query.send(handleQueryResponse);
+
+				function handleQueryResponse(res){
+					if (res.isError()) {
+						alert('Error : '+ res.getMessage() + ' ' + res.getDetailedMessage());
+						return;
+					}
+					var opt = {
+						"title": '業績推移について',
+						"width": 500,
+						"height": 500
+					}
+					var data = res.getDataTable();
+					var chart = new google.visualization.LineChart(document.getElementById('chart'));
+					chart.draw(data, opt);
+				}
+			}
+		</script>
+	</body>
+</html>

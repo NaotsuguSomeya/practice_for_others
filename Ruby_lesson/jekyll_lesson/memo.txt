@@ -1,0 +1,13 @@
+■Jekyllコマンド
+
+- jekyll new [sitename]
+	サンプル作成
+
+- jekyll serve
+	デフォルトPORT:4000
+	buildも同時に行う
+	* jekyll serve --watch : 変更を検知して変換してくれる
+
+- jekyll build
+	mdファイルをhtmlに変換
+	「_site」フォルダができるので本番機にはこれを丸ごと持っていく

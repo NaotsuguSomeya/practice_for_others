@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>キャラ診断</title>
+		<style>
+			body {
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>キャラ診断</h1>
+		<p>
+			<input type="text" id="name" value="">
+		</p>
+		<p>
+			<input type="button" id="getResult" value="診断">
+		</p>
+		<h2>診断結果</h2>
+		<p id="result">
+			こちらに結果が表示されます。
+		</p>
+		<div id="tweet"></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$('#getResult').click(function(){
+					// 名前取得
+					var name = $('#name').val();
+
+					if (!name) {
+						alert('名前を入力してください。');
+						return false;
+					}
+					// console.log(name);
+					// タイプの生成
+					var types = [
+						"勇者", "魔法使い", "戦士", "遊び人", "スーパースター"
+					];
+					// 0-nまでの乱数取得
+					// Math.floor(math.random() * (n+1))
+					var type = types[Math.floor(Math.random() * types.length)];
+
+					// キャラクターの生成
+					var chractors = [
+						"賢い", "勇ましい", "かわいい", "情けない"
+					];
+					// 0-nまでの乱数取得
+					var chractor = chractors[Math.floor(Math.random() * chractors.length)];
+
+					// 結果の表示
+					var result = name + "さんは「" + chractor + type + "」タイプです。";
+					$('#result').text(result);
+
+					// ツイートリンク表示(https://dev.twitter.com/web/tweet-button/web-intent)
+					// target='_blank' : 新タブで表示
+					var tweetlink = "<a href='https://twitter.com/intent/tweet?text=" + encodeURIComponent(result) + "&hashtags=yocchan' target='_blank'>ツイートする！</a>";
+					$('#tweet').html(tweetlink);
+				});
+			});
+		</script>
+	</body>
+</html>

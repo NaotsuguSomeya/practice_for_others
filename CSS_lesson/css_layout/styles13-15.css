@@ -1,0 +1,62 @@
+
+body {
+	/*background: slategray;*/
+}
+.container {
+	width: 500px;
+	margin: 0 auto;
+}
+header {
+	background: tomato;
+}
+main .price{
+	position: absolute;
+	/*top: 0;
+	right: 0;*/
+	top: -5px;
+	right: -5px;
+	font-size: 16px;
+	padding: 4px;
+	font-weight: bold;
+	background: white;
+}
+main .product{
+	position: relative;
+	display: inline-block;
+}
+main {
+	background: skyblue;
+	padding: 15px 0;
+}
+footer {
+	clear: both;
+	background: slategray;
+	padding: 15px 0;
+}
+footer ul#lessons {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+footer ul#lessons h2, footer ul#lessons p {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+footer ul#lessons .lesson_image {
+	float: left;
+	width: 80px;
+}
+footer ul#lessons .lesson_info {
+	float: right;
+	width: 400px;
+}
+footer ul#lessons li {
+	overflow: hidden;
+}
+/*:not(:last-child) -> リストの最後以外に適用*/
+footer ul#lessons li:not(:last-child){
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid rgba(255,255,255,.5);
+}

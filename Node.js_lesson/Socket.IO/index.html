@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Socket.IOの練習</title>
+	</head>
+	<body>
+		<form id="myForm">
+			<!-- <input type="text" id="name"> -->
+			<select id="rooms">
+				<option value="room1">Room 1</option>
+				<option value="room2">Room 2</option>
+			</select>
+			<input type="text" id="msg">
+			<input type="submit" value="Send!">
+		</form>
+		<ul id="logs"></ul>
+		<div id="news"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- Socket.IOが自動生成する -->
+		<script src="/socket.io/socket.io.js"></script>
+		<script>
+			$(function() {
+				// var socket = io.connect(); // 最新
+				// var socket = io('http://localhost:1337');
+				var chat = io('http://localhost:1337/chat');
+				var news = io('http://localhost:1337/news');
+				// emit : イベント発信
+				// on : イベント待受
+				$('#myForm').submit(function(e) {
+					e.preventDefault(); //遷移しないようにする
+					// socket.emit('my_emit_from_client', $('#msg').val());
+					chat.json.emit('my_emit_from_client', {
+						msg: $('#msg').val(),
+						// name: $('#name').val()
+						room: $('#rooms').val()
+					});
+					$('#msg').val('').focus();
+				});
+				chat.on('my_emit_from_server', function(data){
+					$('#logs').append($('<li>').text(data));
+				});
+				news.on('my_emit_from_server', function(data){
+					$('#news').text(data);
+				});
+			});
+		</script>
+	</body>
+</html>

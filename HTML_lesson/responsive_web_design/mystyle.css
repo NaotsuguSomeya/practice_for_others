@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/*
+- スマホ: 320px - 480px
+- タブレット: 480px - 768px
+- PC: 768px以上
+*/
+/*共通の設定*/
+body {
+	font-family: arial, sans-serif;
+	width: 95%;
+	margin: 0 auto;
+}
+#header {
+	background: red;
+}
+#footer {
+	background: green;
+}
+#container {
+}
+#main {
+	background: orange;
+}
+#sub {
+	background: yellow;
+}
+#footerNaviLink {
+	float: right;
+}
+#headerNavi ul {
+	list-style: none;
+	overflow: hidden;
+}
+#headerNavi li {
+	float: left;
+	width: 33%;
+	text-align: center;
+}
+img {
+	max-width: 100%;
+}
+.movie {
+	position: relative;
+	height: 0;
+	padding-top: 56.25%; /* YouTube -> 16:9*/
+}
+iframe {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+/* スマホスタイル */
+#headerNavi {
+	display: none;
+}
+/* タブレットスタイル */
+@media all and (min-width: 480px) {
+	#footerNaviLink {
+		display: none;
+	}
+	#headerNavi {
+		display: block;
+	}
+	#footerNavi {
+		display: none;
+	}
+}
+/* PCスタイル
+	all:980px
+	sidebar : 右200px
+	間に15px
+	main:残り765px
+*/
+@media all and (min-width: 768px) {
+	#container {
+		overflow: hidden;
+	}
+	#main {
+		float: left;
+		width: 78.1%;
+	}
+	#sub {
+		float: right;
+		width: 20.4%; /* (200px / 980px) * 100 */
+	}
+}

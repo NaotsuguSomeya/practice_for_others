@@ -1,0 +1,51 @@
+/*
+[text]
+	- color : orange;
+	- font-size: 14px;
+	- font-family: Arial;
+	- font-weight: bold/normal
+	- text-align: right/center/left
+	- text-decoration: underline/line-through(取り消し線)/none（リンクの線消しなど）
+*/
+p.hello {
+	color: silver;
+	font-size: 30px;
+	font-family: Arial;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: underline line-through;
+}
+/*
+[list]
+	- list-style-type: disc(●)/circle（○）/square(■)/decimal(連番)/lower-alpha(アルファベット順)
+	- list-style-image: 任意の画像にする
+	- list-style-position: inside/outside（insideマーカーを内側に）
+*/
+ul {
+	/*list-style-position: inside;*/
+	list-style: outside lower-alpha;
+	/*list-style: url('./logo_resize.png') square; : list-style-typeは上書きされる*/
+}
+/*
+[cursor]
+*/
+.help { cursor: help;} /* "?"マーク */
+.dragme { cursor: move;} /*  */
+.clickme { cursor: pointer;} /*  */
+.smile { cursor: url('../../commonlib/image/logo_resize.png'), auto;} /* 画像がない場合に第２引数で指定（autoでデフォルト） */
+
+/*
+[background]
+*/
+body {
+	/*background-color: lightgreen;
+	background-image: url('./logo_resize.png');
+	background-repeat: no-repeat;*/
+	/*background-repeat: repeat-x;*/
+	/* background-position: x y */
+	/*background-position: 50px 10px;*/
+	/*background-position: top center;*/
+	/* 背景画像をどのように表示するか scroll/fixed*/
+	/*background-attachment: scroll;*/
+	background: lightgreen url('./logo_resize.png') no-repeat scroll;
+}

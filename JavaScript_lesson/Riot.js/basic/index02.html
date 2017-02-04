@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Riot.jsの練習</title>
+		<script src="../../../commonlib/riot-2.6.3/riot+compiler.min.js"></script>
+	</head>
+	<body>
+		<!-- タグを展開する場所 -->
+		<item></item>
+
+		<!-- タグの定義 -->
+		<script type="riot/tag">
+			<item>
+				<!-- this.item_list を {item_list} として each属性で指定 -->
+				<div each='{item_list}'>
+					<h1>{ name }</h1>
+					<p>{ quote }</p>
+					<button onclick='{clicked}'>play</button>
+				</div>
+
+				<!-- カスタム内部だけに有効なCSS -->
+				<style scoped>
+					:scope p {
+						color: red;
+					}
+				</style>
+
+				// JS内で要素のデータを定義する
+				this.item_list = [
+					{name: 'Riot.jsの練習', quote: 'Hello, Hello, Hello'},
+					{name: 'Northshire Cleric', quote: 'Is someone injured?'},
+				]
+				// イベントハンドラを定義
+				this.clicked = function(e) {
+					console.log(e);
+					console.log(`played ${this.name}`);
+				}
+			</item>
+		</script>
+
+		<script>
+			// マウント
+			riot.mount('*');
+		</script>
+	</body>
+</html>

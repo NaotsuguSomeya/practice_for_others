@@ -1,0 +1,97 @@
+/*
+アニメーション
+ - transition-timing-function
+ 	- ease : 開始と終了がなめらか
+	- linear : 等速度
+	- ease-in : 開始がゆっくり
+	- ease-out : 終了がゆっくり
+	- ease-in-out : 開始と終了がゆっくり
+*/
+.non-abridgement {
+	width: 100px;
+	height: 50px;
+	background: skyblue;
+
+	/*どのプロパティを変化の対象にするか*/
+	transition-property:all;
+	/*変化にかかる時間*/
+	transition-duration:2s;/*２秒*/
+	/*動きかた*/
+	transition-timing-function:ease-in-out;
+	/*変化開始までの時間*/
+	transition-delay:0.8s;
+}
+
+.abridgement {
+	width: 100px;
+	height: 50px;
+	margin-top: 10px;
+	background: lightgreen;;
+	/*省略可能*/
+	transition : all, 2s, ease, 0.8s;
+}
+
+.trans-box:hover {
+	width: 200px;
+	height: 50px;
+	background: blue;
+}
+
+/*animation */
+.animation {
+	width: 50px;
+	height: 50px;
+	margin-top: 10px;
+	background: orange;
+
+	animation-name: slidein; /*名前をつける -> @keyframeに登録*/
+	animation-duration:1s;
+	animation-timing-function:ease;
+	animation-delay:.1s;
+	/*animationの繰り返し*/
+	animation-iteration-count: infinite;
+	/*逆方向に動かしたい*/
+	animation-direction: alternate;
+}
+
+/* keyframeの作成:どのタイミングでどの状態にするか */
+@keyframes slidein {
+	0% {
+		margin-left: 100%;
+		background: white;
+	}
+	50%{
+		margin-left: 50%;
+		background: yellow;
+	}
+	100%{
+		margin-left: 0%;
+	}
+}
+
+/*
+ width / height -> border,paddingを含めた値にしたい
+  - box-sizing
+*/
+body {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 320px;
+	height: 100px;
+	margin-top: 10px;
+	background: pink;
+}
+.box {
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	background: #eee;
+	float: left;
+	padding: 10px;
+	border-bottom: 30px solid #ccc;
+}
+.box + .box {
+	margin-left: 10px;
+}

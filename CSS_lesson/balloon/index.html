@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head lang="ja">
+		<meta charset="utf-8">
+		<title>Balloon Samples</title>
+		<style media="screen">
+			body {
+				padding: 0 10px 10px; /* 上、左右、下 */
+			}
+			h2 {
+				font-size: 16px;
+			}
+			.ex1 {
+				width: 100px;
+				height: 100px;
+				background: #eee;
+			}
+			.ex2 {
+				width: 100px;
+				height: 100px;
+				background: #eee;
+				/* borderの境界線がななめ */
+				border-style: solid;
+				border-width: 20px;
+				border-color: red blue pink green;
+			}
+			.ex3 {
+				width: 0;
+				height: 0;
+				background: #eee;
+				border-style: solid;
+				border-width: 20px;
+				border-color: red blue pink green;
+			}
+			.ex4 {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 20px;
+				/*top以外を透明にして三角形を作る*/
+				border-color: red transparent transparent transparent;
+			}
+			.ex5 {
+				width: 0;
+				height: 0;
+				background: #eee;
+				border-style: solid;
+				border-width: 40px 20px 20px 0;
+				border-color: red blue pink green;
+				transform: skew(-15deg, 0);
+			}
+			.balloon-1 {
+				width: 200px;
+				height: 100px;
+				background: #eee;
+				border-radius: 5px;
+				position: relative;
+			}
+			/*三角形を擬似要素で作る*/
+			.balloon-1:before {
+				position: absolute;
+				right: 20px;
+				bottom: -20px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px;
+				border-color: #eee transparent transparent transparent;
+			}
+			.balloon-2 {
+				width: 200px;
+				height: 100px;
+				background: #eee;
+				border-radius: 5px;
+				position: relative;
+			}
+			.balloon-2:before {
+				position: absolute;
+				right: 20px;
+				bottom: -25px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 15px 20px 10px 0;
+				border-color: #eee transparent transparent transparent;
+			}
+			.balloon-3 {
+				width: 200px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 5px;
+				position: relative;
+			}
+			.balloon-3:before {
+				position: absolute;
+				right: 20px;
+				bottom: -20px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px;
+				border-color: #000 transparent transparent transparent;
+			}
+			/* after擬似要素で透明の三角形を重ねて1pxずらす*/
+			.balloon-3:after {
+				position: absolute;
+				right: 20px;
+				bottom: -19px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px;
+				border-color: #fff transparent transparent transparent;
+			}
+			.balloon-4 {
+				width: 200px;
+				height: 100px;
+				border: 1px solid #000;
+				border-radius: 5px;
+				position: relative;
+			}
+			.balloon-4:before {
+				position: absolute;
+				right: 20px;
+				bottom: -25px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 15px 20px 10px 0;
+				border-color: #000 transparent transparent transparent;
+			}
+			/* after擬似要素で透明の三角形を重ねて1pxずらす*/
+			.balloon-4:after {
+				position: absolute;
+				right: 20px;
+				bottom: -24px;
+				content: '';
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 15px 19px 10px 0;
+				border-color: #fff transparent transparent transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>balloon-1</h2>
+		<div class="balloon-1"></div>
+		<h2>balloon-2</h2>
+		<div class="balloon-2"></div>
+		<h2>balloon-3</h2>
+		<div class="balloon-3"></div>
+		<h2>balloon-4</h2>
+		<div class="balloon-4"></div>
+		<h2>ex1</h2>
+		<div class="ex1"></div>
+		<h2>ex2</h2>
+		<div class="ex2"></div>
+		<h2>ex3</h2>
+		<div class="ex3"></div>
+		<h2>ex4</h2>
+		<div class="ex4"></div>
+		<h2>ex5</h2>
+		<div class="ex5"></div>
+	</body>
+</html>

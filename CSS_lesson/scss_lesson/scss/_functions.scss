@@ -1,0 +1,7 @@
+// ※ファイルは"_"から：パーシャル
+@function getColomnWidth($width, $count){
+  $padding: 10px;
+  $columnWidth: floor(($width - ($padding * ($count - 1))) / $count);
+  @debug $columnWidth; // コンソール出力
+  @return $columnWidth;
+}

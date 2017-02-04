@@ -1,0 +1,22 @@
+[データベース]
+create database inquiry_php_db;
+grant all on inquiry_php_db.* to php_lesson_user@localhost identified by 'pass';
+
+create table inquiry (
+	id int not null auto_increment primary key,
+	name varchar(255),
+	email varchar(255),
+	memo text,
+	created_at datetime,
+	updated_at datetime
+);
+
+alter table inquiry add status enum('active','deleted') default 'active' after memo;
+
+[Basic認証]
+1. パスワードファイル作成
+	htpasswd -c .htpasswd someya
+	(PW:guitar)
+2. htaccess作成
+※注意
+	ビルトインサーバーではBasic認証は使用できない！

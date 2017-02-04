@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrapの練習</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+		<!-- Tabメニュー -->
+		<div class="container" style="padding:20px 0;">
+			<ul class="nav nav-tabs" style="margin-bottom:15px;">
+				<li class="active"><a href="#home"  data-toggle="tab">Home</a></li>
+				<li><a href="#about"  data-toggle="tab">About</a></li>
+			</ul>
+			<!-- tabの中身 -->
+			<div class="tab-content">
+				<div class="tab-pane active" id="home">
+					ホームどす
+					<p>
+						<!-- tooltip -->
+						<a href="#" data-toggle="tooltip" title="説明">this</a>
+						and
+						<!-- popover -->
+						<a href="#" data-toggle="popover" title="説明" data-content="さらに説明">that</a>.
+					</p>
+				</div>
+				<div class="tab-pane" id="about">
+					アバウトどす
+				</div>
+			</div>
+		</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<script>
+			$(function() {
+				$('[data-toggle=tooltip]').tooltip({
+					placement: 'bottom'
+				});
+				$('[data-toggle=popover]').popover({
+				});
+			});
+		</script>
+  </body>
+</html>

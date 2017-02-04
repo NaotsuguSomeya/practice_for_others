@@ -1,0 +1,15 @@
+[インストール]
+ - コマンド
+	sudo npm install -g grunt-cli
+ - 本体
+ 	npm install grunt --save-dev
+- プラグイン
+	[LSEE] npm install grunt-contrib-less --save-dev
+  [CSSlint] npm install grunt-contrib-csslint --save-dev
+  [CSS圧縮] npm install grunt-contrib-cssmin --save-dev
+  [監視] npm install grunt-contrib-watch --save-dev
+  [簡易Webサーバ] npm install grunt-contrib-connect --save-dev
+[実行]
+	- grunt (default) : 全タスク実行
+	 ※default省略可能
+  - grunt <taskname> : タスク指定

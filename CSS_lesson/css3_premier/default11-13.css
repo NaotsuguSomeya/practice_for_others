@@ -1,0 +1,40 @@
+/*
+ 複数背景画像
+*/
+body {
+	margin: 10px;
+}
+header {
+	width: 100%;
+	height: 200px;
+	background:
+		url('logo.png') no-repeat 0 0,
+		url('../../commonlib/image/free-wallpaper-1.jpg') no-repeat 30px 30px,
+		url('logo.png') no-repeat bottom left;
+}
+/*
+ 線形グラデーション
+*/
+.linear {
+	width: 150px;
+	height: 150px;
+	/*background-image: linear-gradient(skyblue, white);*/
+	/*background-image: linear-gradient(to top left, skyblue, white);*/
+	/*background-image: linear-gradient(45deg, skyblue, white); /*degree :角度（時計回り）→45deg:右上に向かう*/
+	/*background-image: linear-gradient(blue, skyblue, white);*/
+	/*background-image: linear-gradient(blue 10%, skyblue 20%, white);*/
+	background-image: repeating-linear-gradient(lightgreen, skyblue 20px);
+}
+/*
+ 円形グラデーション
+*/
+.radical {
+	width: 150px;
+	height: 150px;
+	/*background-image: radial-gradient(skyblue, white);*/
+	/*background-image: radial-gradient(at 30px 40px, skyblue, white); /*中心点をずらす*/
+	/*background-image: radial-gradient(ellipse 20px 30px at 30px 40px, skyblue, white);/*グラデーションのサイズ(ellipse:楕円（デフォルトなので省略可能)*/
+	/*background-image: radial-gradient(circle 20px at 30px 40px, skyblue, white); /*円（%は使えない）*/
+	/*background-image: radial-gradient(farthest-side at 30px 40px, skyblue, white); /*一番遠い辺*/
+	background-image: repeating-radial-gradient(skyblue, blue 20px);
+}

@@ -1,0 +1,19 @@
+{
+	"name": "my 7th extension",
+	"version": "0.2",
+	"manifest_version": 2,
+
+	"description": "ContextMenuからTwitter検索！",
+
+	"permissions": [
+	 "tabs", "http://*/*", "contextMenus"
+	],
+
+	"icons": {
+		"16": "icon.png"
+	},
+
+	"background": {
+		"scripts": ["background.js"]
+	}
+}

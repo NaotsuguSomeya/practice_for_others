@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Riot.jsの練習</title>
+		<script src="../../../commonlib/riot-2.6.3/riot+compiler.min.js"></script>
+	</head>
+	<body>
+		<!-- タグを展開する場所 -->
+    <item name='Riot.jsの練習' quote='Hello, Hello, Hello' ></item>
+		<item name='Northshire Cleric' quote='Is someone injured?' ></item>
+
+    <!-- タグの定義 -->
+    <script type="riot/tag">
+      <item>
+        <h1>{ name }</h1>
+        <p>{ quote }</p>
+
+        this.name   = opts.name;
+        this.quote = opts.quote;
+      </item>
+    </script>
+
+    <script>
+      // マウント
+      riot.mount('*');
+    </script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+[インストール]
+sudo npm install -g gulp
+
+[開発用インストール]※省略形
+npm i -D gulp
+
+[プラグイン:画像最適化]
+npm i -D gulp-imagemin
+
+[プラグイン:CoffeeScriptの変換、結合、圧縮]
+npm i -D gulp-coffee gulp-concat gulp-uglify
+
+[プラグイン:コンパイルエラー時にgulpが止まらない]
+npm i -D gulp-plumber
+
+[プラグイン:変換後に文字列を挿入]
+npm i -D gulp-header
+
+[プラグイン:変換検知してブラウザに反映]
+npm i -D gulp-webserver
+
+[packege.jsonでインストール]
+npm install
+
+[src()メソッド : ソース読み込み]
+ファイル1個
+	gulp.src('./src/index.html')
+ファイル複数
+	gulp.src(['./src/index1.html', './src/index2.html']);
+	gulp.src('./src/*.html');
+	gulp.src('./src/**/*.html');
+	gulp.src(['./src/**/*.html', '!./src/**/not.html']); // not.htmlは除く

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Google Feed APIの練習</title>
+	</head>
+	<body>
+		<!-- <div id="feed"></div> -->
+		<ul id="feed"></ul>
+
+		<script src="https://www.google.com/jsapi"></script>
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script type="text/javascript">
+			google.load("feeds", "1");
+
+			function initialize(){
+				var feed = new google.feeds.Feed('http://ideaxidea.com/feed');
+				// 表示件数変更
+				feed.setNumEntries(100);
+				// ↑１０件までしか取れないが↓を設定すれば過去の情報を取れる
+				feed.includeHistoricalEntries();
+				feed.load(function(result){
+					if (!result.error) {
+						// console.log(result);
+						for (var i = 0; i < result.feed.entries.length; i++) {
+							var entry = result.feed.entries[i];
+							var li = $('<li>');
+							var a = $('<a>').attr('href', entry.link).text(entry.title);
+							a.appendTo(li);
+							li.appendTo($('#feed'));
+						}
+					}
+				});
+			}
+
+			google.setOnLoadCallback(initialize);
+		</script>
+	</body>
+</html>

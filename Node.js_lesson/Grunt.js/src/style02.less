@@ -1,0 +1,26 @@
+// mixin : 共通部分を部品化
+// .my-mixin() { // ():自身を生成しない
+.my-mixin(@wid:5px; @pad:7px) { // 初期値指定可能
+	// border: 5px solid red;
+	border: @wid solid green;
+	padding: @pad;
+	margin: 10px;
+}
+h1 {
+	font-size: 56px;
+	// border: 5px solid red;
+	// padding: 7px;
+	// margin: 7px;
+	.my-mixin;
+	// .my-mixin(5px);
+}
+
+h2 {
+	font-size: 20px;
+	// border: 5px solid red;
+	// padding: 7px;
+	// margin: 7px;
+	// .my-mixin(); // ()をつけてもOK
+	// .my-mixin(7px;20px);
+	.my-mixin(@pad:20px;@wid:7px;);
+}

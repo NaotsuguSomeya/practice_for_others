@@ -1,0 +1,74 @@
+
+body {
+	/*background: slategray;*/
+}
+#eyecatch {
+	background: url(../image/free-wallpaper-1.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 70%;
+	height: 100px;
+}
+.container {
+	width: 500px;
+	margin: 0 auto;
+}
+header {
+	background: tomato;
+}
+ul#menu {
+	padding: 0;
+	margin: 0;
+	/*リストの黒丸をなくす*/
+	list-style-type: none;
+	/*inline-blockの間隙をなくす*/
+	font-size: 0;
+}
+ul#menu > li {
+	display: inline-block;
+}
+ul#menu > li > a{
+	display: inline-block;
+	width: 80px;
+	height: 40px;
+	background: orange;
+	font-size: 16px;
+	/*リンクの河川をなくす*/
+	text-decoration: none;
+	text-align: center;
+	/*上下中央：heightとkine-heightを合わせる*/
+	line-height: 40px;
+}
+ul#menu > li > a:hover{
+	opacity: 0.5;
+	/*変化のスピード*/
+	transition: 0.8s;
+}
+main {
+	background: skyblue;
+}
+#left {
+	background: limegreen;
+	float: left;
+	/*width: 20%;*/
+	width: 100px;
+}
+#center {
+	background: seagreen;
+	/*float: left;*/
+	/*width: 60%;*/
+	margin: 0 100px;
+}
+#right {
+	background: lightgreen;
+	/*float: left;*/
+	float: right;
+	/*width: 20%;*/
+	width: 100px;
+}
+.clear {
+	overflow: hidden;
+}
+footer {
+	clear: both;
+	background: slategray;
+}

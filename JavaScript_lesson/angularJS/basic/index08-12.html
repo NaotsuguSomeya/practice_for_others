@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- ng-app : AngularJSのアプリであることを明示的に記載する -->
+<html lang="ja" ng-app="myapp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJSの練習</title>
+		<script src="../../../commonlib/angular-1.5.8/angular.min.js"></script>
+		<script src="./myscript.js"></script>
+		<style media="screen">
+			.myEven {
+				background: #ccc;
+			}
+			.myOdd {
+				background: tomato;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>AngularJSの練習</h1>
+		<div ng-controller="MainController">
+			<!-- ng-submit : submitしたときの処理を指定 -->
+			<!-- novalidate : AngularJSのバリデーションを有効にするためHTML5のバリデーションを無効化する -->
+			<form novalidate name="myForm" ng-submit="addUser()">
+				<!-- required : 入力必須 -->
+				<!-- ng-minlength : 最低文字数 -->
+				<!-- ng-mzxlength : 最大文字数 -->
+				<p>Name:
+					<input
+						type="text"
+						name="name"
+						ng-model="user.name"
+						required
+						ng-minlength="3"
+						ng-maxlength="8">
+					<!-- エラーメッセージ -->
+					<span ng-show="myForm.name.$error.required">Requid!</span>
+					<span ng-show="myForm.name.$error.minlength">Too Short!</span>
+					<span ng-show="myForm.name.$error.maxlength">Too Long!</span>
+				</p>
+				<p>Score:
+					<input
+						type="number"
+						name="score"
+						ng-model="user.score">
+				</p>
+				<p>E-Mail:
+					<input
+						type="email"
+						name="email"
+						ng-model="user.email">
+				</p>
+				<!-- E-Mail用のエラー機構 : "@"をつければOK -->
+				<span ng-show="myForm.email.$error.email">Not valid E-Mail!</span>
+				<p>Web:
+					<input
+						type="url"
+						name="url"
+						ng-model="user.url">
+				</p>
+				<!-- Web用のエラー機構 : "http://"."https://"から始めればOK -->
+				<span ng-show="myForm.url.$error.url">Not valid URL!</span>
+				<!-- チェックボックス : デフォルト true /false -->
+				<!-- ng-true-value : trueの場合の値を指定 -->
+				<!-- ng-false-value : falseの場合の値を指定 -->
+				<p>
+					18+:
+					<input
+						type="checkbox"
+						ng-model="user.adult"
+						ng-true-value="'adult'"
+						ng-false-value="'child'">
+				</p>
+				<!-- ラジオボタン -->
+				<p>
+					Phone:
+					<input
+						type="radio"
+						ng-model="user.phone"
+						value="iPhone">iPhone
+					<input
+						type="radio"
+						ng-model="user.phone"
+						value="android">Android
+					<input
+						type="radio"
+						ng-model="user.phone"
+						value="galapagos">Galapagos
+				</p>
+				<!-- テキストエリア -->
+				<p>
+					Memo:
+					<textarea
+						name="name"
+						rows="8"
+						cols="40"
+						ng-model="user.memo"
+						ng-maxlength="50"
+						></textarea>{{50-user.memo.length}}
+					<span ng-show="myForm.name.$error.maxlength">Too Long!</span>
+				</p>
+				<!-- セレクトボックス -->
+				<p>
+					Color:
+					<!-- ng-options : 自動的にoptionタグを作成（配列を渡す） -->
+					<!-- color（変数を表示） for color(変数に代入) in [xxx] -->
+					<!-- ng-init : 初期値 -->
+					<select
+						ng-model="user.color"
+						ng-options="'original label:'+color for color in ['red','blue','pink']"
+						ng-init="user.color='red'">
+					</select>
+				</p>
+				<p><input type="submit" value="add"></p>
+			</form>
+			<!-- <PRE>タグ : スペース・改行などを、そのまま等幅フォントで表示 -->
+			<!-- jsonフィルター→jsonモデルで表示(デバッグなどに利用) -->
+			<pre>{{user|json}}</pre>
+		</div>
+	</body>
+</html>

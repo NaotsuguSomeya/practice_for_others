@@ -1,0 +1,65 @@
+/*  */
+#container {
+	width: 500px;
+	/*width: 70%;*/
+	/*中央揃え*/
+	margin: 0px auto;
+}
+#header {
+	background: red;
+	margin-bottom: 10px;
+}
+#main {
+	background: blue;
+	overflow: hidden;/*footerが回りこまないようにする*/
+	margin-top: 50px; /*headerのmargin-bottomは相殺される※大きい方に寄る*/
+}
+#left {
+	background: pink;
+	float: left;
+	/*floatを指定したときはwidthが必須！*/
+	/*width: 30%;*/
+	width: 100px;
+}
+#center {
+	background: orange;
+	/*float: left;*/
+	/*width: 40%;*/
+	margin-left: 100px;
+	margin-right: 100px;
+}
+#right {
+	background: purple;
+	/*float: right;*/
+	/*width: 60%;*/
+	/*margin-left: 200px; /*leftを固定したい場合*/
+	float: right;
+	width: 100px;
+	/*margin-left: 110px;*/
+	/*margin-left: 10px; /*left(widh)+right(widh+margin-left)=200px*/
+	/*width: 30%;*/
+}
+#main2 {
+	background: lightblue;
+	overflow: hidden;/*footerが回りこまないようにする*/
+}
+#left2 {
+	background: lightyellow;
+	float: left;
+	width: 100px;
+}
+#center2 {
+	background: lightgreen;
+	float: left;
+	width: 280px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#right2 {
+	background: lightgrey;
+	float: left;
+	width: 100px;
+}
+#footer {
+	background: green;
+}

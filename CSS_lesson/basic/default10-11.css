@@ -1,0 +1,28 @@
+/*
+	ボックスモデル
+*/
+body, html {height: 100%; }
+div {
+	background: lightgreen;
+	/*width: 200px;*/
+	width: 50%; /*	ブラウザのリサイズに対応*/
+	/*height: 100px;*/
+	/*heightの%は親要素を明治的に示す必要がある*/
+	height: 50%;
+
+	/*
+		border
+			- border-color
+			- border-width
+			- border-style : solid(実線) / dotted(点線) / dashed(破線) / double(二重線) / inset/outset(立体的)
+
+	border-color: orange;
+	border-width: 4px;
+	border-style: dotted;
+	↑省略可能
+	*/
+	/*border: orange 4px dotted;*/
+	border-top: orange 4px dotted;
+
+
+}

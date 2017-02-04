@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* 通常コメント※cssに表示される */
+#main {
+  width: 90%;
+  color: blue;
+  font-weight: bold;
+  background: url("../img/sample.png");
+}
+
+#main p {
+  font-size: 14px;
+  color: #ff9999;
+}
+
+#main p a {
+  text-decoration: none;
+  background: red;
+}
+
+#main p a:hover {
+  font-weight: bold;
+  font-size: 3px;
+}
+
+#main p a .sub {
+  font-size: 12px;
+}
+
+#main p .fs10 {
+  font-size: 20px;
+}
+
+#main p .fs11 {
+  font-size: 22px;
+}
+
+#main p .fs12 {
+  font-size: 24px;
+}
+
+#main p .fs13 {
+  font-size: 26px;
+}
+
+#main p .fs14 {
+  font-size: 28px;
+}
+
+#main .fss10 {
+  font-size: 20px;
+}
+
+#main .fss11 {
+  font-size: 22px;
+}
+
+#main .fss12 {
+  font-size: 24px;
+}
+
+#main .fss13 {
+  font-size: 26px;
+}
+
+#main .fss14 {
+  font-size: 28px;
+}
+
+#main .cat-icon {
+  background: url("cat-icon.png");
+}
+
+#main .dog-icon {
+  background: url("dog-icon.png");
+}
+
+#main .tiger-icon {
+  background: url("tiger-icon.png");
+}
+
+#main .grid {
+  float: left;
+  width: 85px;
+}
+
+#main .label {
+  background: #ffffff;
+  border-radius: 4px;
+  font-size: 100px;
+}
+
+#main .msg, #main .errorMsg, #main .warningMsg {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 4px;
+  color: white;
+}
+
+#main .errorMsg {
+  background: red;
+}
+
+#main .warningMsg {
+  background: orange;
+}

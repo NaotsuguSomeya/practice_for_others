@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrapの練習</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+		<div class="container" style="padding:20px 0;">
+			<!-- ナビゲーションバー -->
+			<!-- navbar-fixed-top : 常に上部に固定 -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="navbar-header">
+					<!-- スマホなど小さいブラウザ対応 -->
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".target">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Google</a>
+				</div>
+				<div class="collapse navbar-collapse target">
+					<ul class="nav navbar-nav">
+						<li><a href="#">link 1</a></li>
+						<li class="active"><a href="#">link 2</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">link 3</a></li>
+						<li><a href="#">link 4</a></li>
+					</ul>
+				</div>
+			</nav>
+			<nav class="navbar navbar-inverse  navbar-fixed-bottom">
+				<div class="navbar-header">
+					<a href="#" class="navbar-brand">Yahoo</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="#">link 1</a></li>
+					<li class="active"><a href="#">link 2</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">link 3</a></li>
+					<li><a href="#">link 4</a></li>
+				</ul>
+			</nav>
+		</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

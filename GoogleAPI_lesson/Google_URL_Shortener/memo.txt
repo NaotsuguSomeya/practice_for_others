@@ -1,0 +1,5 @@
+[Google URL Shortener]
+	- URL短縮
+	- URL展開
+	- アクセス数統計
+	- (範囲外)利用したユーザーごとの履歴

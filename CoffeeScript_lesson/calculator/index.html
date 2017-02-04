@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>割り勘電卓 with coffee script</title>
+	</head>
+	<style media="screen">
+		body {
+			font-size: 16px;
+			text-align: center;
+			font-family: Arial,sans-serif;;
+		}
+		h1 {
+			font-size: 24px;
+		}
+		input[type="text"]{
+			padding: 7px;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			width: 100px;
+			font-weight: bold;
+			font-size: 18px;
+			text-align: right;
+		}
+		#btn {
+			margin: 30px auto;
+			width: 180px;
+			border-radius: 5px;
+			box-shadow: 0 4px #e91b0c;
+			background: #f44336;
+			color: white;
+			cursor: pointer;
+			padding: 7px;
+		}
+		#btn:hover{
+			opacity: .8
+		}
+		#btn.pushed {
+			margin-top: 32px;
+			box-shadow: 0 2px 0 #e91b0c;
+		}
+	</style>
+	<body>
+		<h1>割り勘電卓<br>with coffee script</h1>
+		<p>
+			金額
+			<input type="text" id="price" value="0">
+		</p>
+		<p>
+			人数
+			<input type="text" id="num" value="0">
+		</p>
+		<div id="btn">計算する</div>
+		<p id="result"></p>
+
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="../../commonlib/coffee-script.js"></script>
+    <script src="script.coffee" type="text/coffeescript"></script>
+	</body>
+</html>

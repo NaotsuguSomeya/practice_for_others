@@ -1,0 +1,26 @@
+// extend：関係性が明らかな場合
+.button {
+	font-size: 14px;
+	border: 1px solid #000;
+}
+.button-ok {
+	&:extend(.button); // .buttonを継承
+	color: green;
+}
+.button-ng {
+	&:extend(.button); // .buttonを継承
+	color: red;
+}
+// mixinとの違い->コード量が多くなる
+.button2 {
+	font-size: 14px;
+	border: 1px solid #000;
+}
+.button2-ok {
+	.button2;
+	color: green;
+}
+.button2-ng {
+	.button2;
+	color: red;
+}

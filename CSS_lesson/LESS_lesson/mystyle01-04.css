@@ -1,0 +1,14 @@
+/*
+	複数コメント
+	複数コメント
+	複数コメント
+*/
+.myheader1 {
+  font-size: 24px;
+  color: #ff0000;
+}
+.myheader2 {
+  font-size: 20px;
+  color: #990000;
+  background: url("/imag/sample.png");
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- ng-app : AngularJSのアプリであることを明示的に記載する -->
+<html lang="ja" ng-app="myapp">
+	<head>
+		<meta charset="utf-8">
+		<title>AngularJSの練習</title>
+		<script src="../../../commonlib/angular-1.5.8/angular.min.js"></script>
+		<script src="./myscript.js"></script>
+		<style media="screen">
+			.myEven {
+				background: #ccc;
+			}
+			.myOdd {
+				background: tomato;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>AngularJSの練習</h1>
+		<hr>
+		<div ng-controller="MainController">
+			<ul>
+				<!-- ng-class-even / ng-class-odd : 偶数/奇数番目にそれぞれclassを指定 -> styleでいろいろ変更 -->
+				<li ng-repeat="user in users2" ng-class-even="'myEven'" ng-class-odd="'myOdd'">
+					<!-- 順番を取る: $index -->
+					<!-- $first, $last, $middle : リストの位置がtrue/falseで返る -->
+					{{$index+1}}) {{$first}} {{$last}} {{$middle}} {{user.name}} : {{user.score}}
+				</li>
+				<hr>
+				<li ng-repeat="user in users2" ng-controller="UserItemController">
+					{{user.name}} : {{user.score}}
+
+					<button ng-click="increment()">+1</button>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

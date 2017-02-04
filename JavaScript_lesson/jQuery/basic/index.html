@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf8">
+		<title>jQueryの練習</title>
+		<style>
+			.myStyle{
+				border: 5px solid green;
+				font-size: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="top-title">jQueryの練習</p>
+		<hr>
+		<ul id="main">
+			<li>0</li>
+			<li class="item">1</li>
+			<li class="item">2</li>
+			<li>
+				3
+				<ul id="sub">
+					<li>3-0</li>
+					<li>3-1</li>
+					<li class="item">3-2</li>
+					<li class="item">3-3</li>
+					<li>3-4</li>
+				</ul>
+			</li>
+		</ul>
+		<hr>
+		<!-- HTML5では、"data-xxxx"でdata属性になる -->
+		<p><a href="https://www.google.co.jp/" data-sitename="google">Google GO!</a></p>
+		<p><a href="https://www.yahoo.co.jp/">Yahoo GO!</a></p>
+		<p><a href="https://www.bing.co.jp/">Bing GO!</a></p>
+
+		<input type="text" value="">
+		<hr>
+		<div id="box1" style="width:100px;height:100px;background:red;"></div>
+		<hr>
+		<input type="text" id="txtname">
+		<br>
+		<select id="members" name="members">
+			<option>1.aaa</option>
+			<option>2.bbb</option>
+			<option>3.ccc</option>
+		</select>
+		<button id="addBt">Add!</button>
+		<button id="detail">もっと見る！</button>
+		<div id="result"></div>
+
+		<p>
+			<input type="text" id="txtname2" name="name">
+			<input type="button" id="greet2" value="Greet!">
+		</p>
+		<div id="result2"></div>
+		<!-- bodyの閉じタグの直前 -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script>
+			// 当ドキュメントが読み込まれたときに実行
+			//$(document).ready(function(){
+			$(function(){
+				// メソッド：処理(つなげてかける：メソッドチェーン)
+				// $('p').css('color', 'red').hide('slow');
+				// セレクタ：処理対象のDOM要素（Document Object Model）
+				//  - html要素：そのまま（p h1 ul など）
+				//  - id : #id名
+				//  - class : .class名
+				/*
+					> : 直下の子要素
+					  : それ以外の要素（半角うsペース）
+					, : 複数の要素
+					+ : 隣接する要素
+				*/
+				// $('#sub').css('color', 'lightgreen');
+				// $('.item').css('color', 'blue');
+				// $("#main > .item").css('color', 'blue');
+				// $("#main .item").css('color', 'blue');
+				// $("p, .item").css('color', 'blue');
+				// $(".item + .item").css('color', 'blue');
+
+				// フィルタ
+				// :eq(n) -> n番目の要素
+				// :gt(n) -> n以降全部(greater than)
+				// :lt(n) -> nより前全部(less than)
+				// :even -> 偶数
+				// :odd -> 奇数
+				// :contains('xxx') -> 要素の中身に含まれる文字列を指定
+				// :first
+				// :last
+				// $("#sub > li:contains('4')").css('color', 'gold');
+				// $("#sub > li:first").css('color', 'gold');
+				// $("#sub > li:last").css('color', 'green');
+
+				// メソッドを使ったDOM要素の指定
+				// parent(), children()
+				// next(), prev()
+				// siblings() -> 兄弟要素
+				// $("#sub").parent().css('color', 'green')
+				// $("#sub").children().css('color', 'green')
+				// $("#sub > li:eq(2)").next().css('color', 'green')
+				// $("#sub > li:eq(2)").prev().css('color', 'green')
+				// $("#sub > li:eq(2)").siblings().css('color', 'green')
+
+				// 属性セレクタ
+				// =  : 等しい
+				// != : 等しくない
+				// *= : 含む
+				// ^= : 前方一致
+				// $= : 後方一致
+				// $('a[href="https://www.google.co.jp/"]').css('background', 'orange');
+				// $('a[href!="https://www.google.co.jp/"]').css('background', 'orange');
+				// $('a[href*="google"]').css('background', 'orange');
+				// $('a[href^="https://www.g"]').css('background', 'orange');
+				// $('a[href$="le.co.jp/"]').css('background', 'orange');
+
+				// css
+				// $('#top-title').css('color', 'red').css('background', 'lightblue');
+				// cssの出力
+				// console.log($('p').css('color'));
+				// addClass, removeClass
+				// $('p').addClass('myStyle');
+
+				// attr
+				// console.log($('a').attr('href'));
+				// $('a').attr('href', 'https://www.yahoo.co.jp/');
+
+				// data
+				// console.log($('a').data('sitename'));
+
+				// 要素の値を取得
+				// text
+				// html
+				// val : form部品に使う
+				// remove : 要素を削除
+				// empty : 値を削除
+				// $('p').text('change!!');
+				// $('p').html('<a href="">click!</a>');
+				// $('input').val('text value!');
+				// $('p').remove();
+
+				// 要素の追加
+				// before,after
+				//    -> insertBefore, insertAfter
+				// prepend, append : 子要素の末尾に追加
+				//    -> prependTo, appendTo
+				var li = $('<li>').text('just append!');
+				// $('ul > li:eq(1)').before(li);
+				// $('ul > li:eq(3)').after(li);
+				// li.insertBefore($('ul > li:eq(1)'));
+				// $('ul').prepend(li);
+				// $('ul').append(li);
+				li.appendTo($('ul'));
+
+				// hide, show
+				// fadeOut, fadeIn
+				// $('#box1').hide(2000);
+				// $('#box1').fadeOut(2000);
+				// $('#box1').toggle(2000);
+				// $('#box1').toggle(2000);
+				// 第２引数にfunctionで、fadeOut終了後に処理
+				// $('#box1').fadeOut(2000, function(){alert(1);});
+
+				// イベント
+				// click
+				// mouseover, mouseout, mousemove
+				$('#box1').click(function(){
+					alert(1);
+				});
+				$('#box1')
+					.mouseover(function(){
+						// $(this) : イベントの対象→この場合、$('#box1')
+						$(this).css('background', 'green');
+					})
+					.mouseout(function(){ // メソッドチェーン
+						$(this).css('background', 'red');
+					})
+					.mousemove(function(e){ // e : イベントオブジェクト（公式サイトに詳細）
+						$(this).text(e.pageX);
+					});
+
+				// focus, blur(フォーカスアウト時)
+				$('#txtname')
+					.focus(function(){
+						$(this).css('background', 'yellow')
+					})
+					.blur(function(){
+						$(this).css('background', 'white')
+					});
+
+				// change(selectオブジェクトと一緒に使うことが多い)
+				$('#members').change(function(){
+					alert('change!');
+				});
+
+				// onメソッド
+				$('#addBt').click(function(){
+					var p = $('<p>').text('vanish!!').addClass('vanish'); //
+					$(this).before(p);
+				});
+				// ↓は最初に読み込まれたときに存在しない要素なので無効
+				// $('.vanish').click(function(){
+				// 	$(this).remove();
+				// });
+				$('body').on('click', '.vanish', function(){
+					$(this).remove();
+				});
+
+				// ajax(非同期で行われる：処理が終わる前に次の処理に進む)
+				$('#detail').click(function(){
+					$('#result').load('./more.html', function(){ // コールバック関数
+						$('#message').css('color', 'red');
+					});
+				});
+
+				// $.post, $.get
+				$('#greet2').click(function(){
+					$.get('http://localhost/phpLesspn/greet.php', {
+						name: $('#txtname2').val()
+					},function(data){
+						$('#result2').html(data);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

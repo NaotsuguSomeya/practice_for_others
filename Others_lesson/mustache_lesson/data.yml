@@ -1,0 +1,11 @@
+title: my data
+score: 32
+html: <p>
+showScore: false
+users:
+  - name: someya
+    email: someya@gmail.com
+    score: 80
+  - name: yocchan
+    email: yocchan@gmail.com
+    score: 100

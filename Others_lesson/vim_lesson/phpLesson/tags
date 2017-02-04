@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AdminUser	index_class.php	/^class AdminUser extends User {$/;"	c
+BaseUser	index_ab_class.php	/^abstract class BaseUser {$/;"	c
+MY_EMAIL	index_const.php	/^define("MY_EMAIL","test@gamil.com");$/;"	d
+User	index_ab_class.php	/^class User extends BaseUser {$/;"	c
+User	index_class.php	/^class User {$/;"	c
+User	index_interface.php	/^class User implements sayHi, sayHello {$/;"	c
+__construct	index_class.php	/^	public function __construct($name){$/;"	f
+bob	index_class.php	/^$bob = new User("Bob");$/;"	v
+bob	index_outerfile.php	/^$bob = new lib\\User("Bob");$/;"	v
+colors	index_array.php	/^$colors = ["red", "blue", "yellow"];$/;"	v
+colors	index_function2.php	/^$colors = ["red", "blue", "yellow"];$/;"	v
+count	index_class.php	/^	public static $count = 0;$/;"	v
+div	index_exception.php	/^function div($x, $y){$/;"	f
+errflg	index_htmlform.php	/^		$errflg = true;$/;"	v
+errflg	index_htmlform.php	/^	$errflg = false;$/;"	v
+getMessage	index_class.php	/^	public static function getMessage($val){$/;"	f
+i	index_roop.php	/^$i = 11;$/;"	v
+j	index_roop.php	/^$j = $i;$/;"	v
+lang	index_function.php	/^	$lang = "php";$/;"	v
+lang	index_function.php	/^$lang = "ruby";$/;"	v
+max	index_if.php	/^$max = ($x > $y) ? $x : $y;$/;"	v
+msg	index_const.php	/^$msg = "hellow world!";$/;"	v
+name	index_ab_class.php	/^	public $name;$/;"	v
+name	index_class.php	/^		$this->name = $name;$/;"	v
+name	index_class.php	/^	public $name;$/;"	v
+name	index_strings.php	/^$name = "someya";$/;"	v
+s1	index_function2.php	/^$s1 = "hello";$/;"	v
+s1	index_strings.php	/^$s1 = "hello, {$name}!\\nhello,again!";$/;"	v
+s2	index_function2.php	/^$s2 = "ねこ";$/;"	v
+s2	index_strings.php	/^$s2 = 'hello, $name!\\nhello,again!';$/;"	v
+s3	index_strings.php	/^$s3 = "hello, ${name}!\\nhello,again!";$/;"	v
+s4	index_strings.php	/^$s4 = "hello" . ", combine" . ", strings";$/;"	v
+sales	index_array.php	/^$sales = [$/;"	v
+sayHello	index_class.php	/^	public function sayHello(){$/;"	f
+sayHello	index_interface.php	/^	public function sayHello(); \/\/ static有無も合わせる$/;"	f
+sayHello	index_interface.php	/^	public function sayHello(){$/;"	f
+sayHello	index_interface.php	/^interface sayHello {$/;"	i
+sayHi	index_ab_class.php	/^	public function sayHi(){ \/\/ 子クラスでの実装時はアクセス権、引数は親クラスのmethodと同様にする$/;"	f
+sayHi	index_class.php	/^	public function sayHi() {$/;"	f
+sayHi	index_function.php	/^function sayHi($name = "someya") {$/;"	f
+sayHi	index_interface.php	/^	public static function sayHi(); \/\/ 必ずアクセス権はpublicになる。実装の中身はクラス内で書く$/;"	f
+sayHi	index_interface.php	/^	public static function sayHi(){$/;"	f
+sayHi	index_interface.php	/^interface sayHi {$/;"	i
+score	index_if.php	/^$score = 70;$/;"	v
+signal	index_switch.php	/^$signal = "green";$/;"	v
+steve	index_class.php	/^$steve = new AdminUser("Steve");$/;"	v
+tom	index_ab_class.php	/^$tom = new User();$/;"	v
+tom	index_class.php	/^$tom = new User("Tom");$/;"	v
+usernm	index_htmlform.php	/^	$usernm = $_POST['username'];$/;"	v
+usernm	index_htmlform.php	/^$usernm = '';$/;"	v
+usernmlen	index_htmlform.php	/^	$usernmlen = strlen($usernm);$/;"	v
+x	index_function2.php	/^$x = 5.4;$/;"	v
+x	index_if.php	/^$x = 0;$/;"	v
+you	index_interface.php	/^$you = new User();$/;"	v
+z	index_calc.php	/^$z = 5;$/;"	v

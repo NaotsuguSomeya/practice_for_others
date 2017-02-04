@@ -1,0 +1,100 @@
+// 1行コメント※cssに表示されない
+/* 通常コメント※cssに表示される */
+///////////////////////////////////////////////////////////////////////////////
+// ①node.jsインストール
+// ②npm install -g node-sass
+// ③コンパイル：node-sass main.scss ../css/main.css --output-style expanded -w
+//   ※--output-style expanded : 字下げしない
+//   ※-w : watchモード（scssに変更があったらcssに即変換）
+///////////////////////////////////////////////////////////////////////////////
+// 変数($)
+//  - データ型 : 数値、文字列、真偽、色、リスト
+// 四則演算：+ - * / ※前後の半角スペース必須
+$baseFontSize: 14px;
+$imgDir: "../../commonlib/image/";
+$brandColor: red; // cssで定義されているカラーの指定
+// lighten darken
+// 条件分岐 @if @else
+// == != < > <= >=
+$debugMode: true;
+$x: 10;
+
+#main {
+  width: 90%;
+  // background: url($imgDir + "sample.png");
+  @if $debugMode == true {
+    color: blue;
+  } @else {
+    color: green;
+  }
+  @if $x > 9 {
+    font-weight: bold;
+  }
+  background: url("#{$imgDir}sample.png");
+  p {
+    font-size: $baseFontSize;
+    color: lighten($brandColor, 30%); // n%明るくする関数
+    a {
+      text-decoration: none;
+      background: $brandColor;
+      &:hover { // & : 親要素を指定
+        font-weight: bold;
+        font-size: #{1+2}px;
+      }
+      .sub {
+        font-size: $baseFontSize - 2px;
+      }
+    }
+  }
+  // ループ
+  // @for @while
+  p {
+    @for $i from 10 through 14 {
+      .fs#{$i} {font-size: #{$i*2}px;}
+    }
+  }
+  $i: 10;
+  @while $i <= 14 {
+    .fss#{$i} {font-size: #{$i*2}px;};
+    $i: $i + 1;
+  }
+  // リスト：似たようなデータをまとめて管理
+  // $animals: cat, dog, tiger;
+  // @each $animal in $animals {
+  @each $animal in cat, dog, tiger{ // 直接書いてもOK
+    .#{$animal}-icon {
+      background: url("#{$animal}-icon.png");
+    }
+  }
+  // 関数
+  @import "settings"; // "_"で始まるファイルを探す
+  @import "functions"; // "_"で始まるファイルを探す
+  .grid {
+    float: left;
+    width: getColomnWidth($totalWidth, $columnCount);
+  }
+  // @mixin(複数の設定をまとめて管理)
+  @mixin round($radius:4px) { // 初期値指定可能
+    border-radius: $radius;
+    font-size: 100px;
+  }
+  .label {
+    background: #ffffff;
+    @include round // mixinを読み込む
+  }
+  // @extend(スタイルの継承)
+  .msg {
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 4px;
+    color: white;
+  }
+  .errorMsg {
+    @extend .msg;
+    background: red;
+  }
+  .warningMsg {
+    @extend .msg;
+    background: orange;
+  }
+}

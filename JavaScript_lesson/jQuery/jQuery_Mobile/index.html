@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head lang="ja">
+		<meta charset="utf-8">
+		<title>jQuery Mobileの練習</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../../commonlib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+	</head>
+	<body>
+		<!-- data-role="page" : jQueryMobileで１ページを指定 -->
+		<div data-role="page" id="home">
+			<!-- data-position="fixed" : ヘッダ固定 -->
+			<div data-role="header" data-position="fixed">
+				<a href="#menu" data-icon="gear">左</a>
+				<h1>ホーム</h1>
+				<a href="#menu" data-icon="check">右</a>
+				<!-- <a href="#menu" data-icon="check" class="ui-btn-right">右だけ</a> -->
+			</div>
+			<div data-role="content">
+				<p>
+					こんにちわ！
+				</p>
+				<p><a href="#home">ホーム</a></p>
+				<!-- data-transition : トランジション（アニメーション効果） -->
+				<p><a href="#menu" data-transition="flip">メニュー</a></p>
+
+				<p><a href="#menu" data-role="button" data-icon="gear" data-inline="true">ボタン</a></p>
+				<p><a href="#menu" data-role="button" data-theme="b">ボタン</a></p>
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-role="button" data-icon="gear" >ボタン1</a>
+					<a href="#menu" data-role="button" data-icon="gear" >ボタン2</a>
+					<a href="#menu" data-role="button" data-icon="gear" >ボタン3</a>
+				</div>
+
+				<!-- rel="external" : 外部サイトの場合につける -->
+				<p><a href="http://google.com" rel="external">Google</a></p>
+				<!-- デフォルト：動的(ajax)に読み込む -->
+				<p><a href="a.html">a</a></p>
+				<!-- 静的に切り替わる -->
+				<p><a href="a.html" data-ajax="false">a(data-ajax=false)</a></p>
+				<form action="mail.php" method="post">
+					<!-- data-role="fieldcontain" : 要素を囲う -->
+					<div data-role="fieldcontain">
+						<label for="name">名前</label>
+						<input type="text" name="name" id="name" value="">
+					</div>
+					<!-- 検索アイコンつき -->
+					<div data-role="fieldcontain">
+						<label for="keywords">検索</label>
+						<input type="search" name="keywords" id="keywords" value="">
+					</div>
+					<!-- スライダー -->
+					<div data-role="fieldcontain">
+						<label for="amount">数量</label>
+						<input type="range" name="amount" min="0" max="100" id="amount" value="20">
+					</div>
+					<!-- チェックボックス -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup"><!--  data-type="horizontal"使用可能 -->
+							<legend>色(チェックボックス)</legend>
+							<input type="checkbox" name="color1" id="color1c">
+							<label for="color1c">赤</label>
+							<input type="checkbox" name="color2" id="color2c" checked>
+							<label for="color2c">青</label>
+							<input type="checkbox" name="color3" id="color3c">
+							<label for="color3c">黄</label>
+						</fieldset>
+					</div>
+					<!-- ラジオボタン -->
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup"><!--  data-type="horizontal"使用可能 -->
+							<legend>色(ラジオボタン)</legend>
+							<input type="radio" name="color" value="1" id="color1r">
+							<label for="color1r">赤</label>
+							<input type="radio" name="color" value="2" id="color2r" checked>
+							<label for="color2r">青</label>
+							<input type="radio" name="color" value="3" id="color3r">
+							<label for="color3r">黄</label>
+						</fieldset>
+					</div>
+					<!-- セレクトボックス -->
+					<div data-role="fieldcontain">
+						<label for="colorS">色(セレクトボックス)</label>
+						<!-- multiple : 複数選択 -->
+						<select id="colorS" name="color" data-native-menu="false" multiple>
+							<option value="1" selected>赤</option>
+							<option value="2">青</option>
+							<option value="3">黄</option>
+						</select>
+					</div>
+
+					<input type="submit" value="送信">
+				</form>
+				<!-- リストビュー -->
+				<ul data-role="listview" data-filter="true">  <!-- リストの検索フィルター -->
+					<li data-role="list-divider">日本語</li> <!-- 区切り -->
+					<li><a href="#menu">赤 <span class="ui-li-count">22</span></a></li>
+					<li><a href="#menu">
+								<img src="../../../commonlib/image/logo.jpg" alt="ウサギ" />
+								青
+								<p>
+									うさぎです。うさぎです。うさぎです。うさぎです。うさぎです。
+								</p>
+							</a>
+					</li>
+					<li><a href="#menu">黄</a></li>
+					<li data-role="list-divider">English</li> <!-- 区切り -->
+					<li><a href="#menu">red <span class="ui-li-count">33</span></a></li>
+					<li><a href="#menu">blue</a></li>
+					<li><a href="#menu">yellow</a></li>
+				</ul>
+			</div>
+			<!-- class="ui-bar" : 上下の余白  -->
+			<div data-role="footer" class="ui-bar" data-position="fixed">
+				<div data-role="controlgroup" data-type="horizontal">
+					<a href="#menu" data-icon="plus">追加</a>
+					<a href="#menu" data-icon="delete">削除</a>
+				</div>
+				<h4>Copyright@someya 2016</h4>
+				<div data-role="navbar">
+					<ul>
+						<!-- 最大５つ -->
+						<li><a href="#menu" data-icon="plus" >メニュー１</a></li>
+						<li><a href="#menu" class="ui-btn-active">メニュー２</a></li>
+						<li><a href="#menu">メニュー３</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="page" id="menu">
+			<!--  data-add-back-btn="true" : 戻るボタン -->
+			<div data-role="header" data-add-back-btn="true">
+				<h1>メニュー</h1>
+			</div>
+			<div data-role="content">
+				<p>
+					めにゅーです
+				</p>
+				<p><a href="#home">ホーム</a></p>
+				<p><a href="#menu">メニュー</a></p>
+			</div>
+			<div data-role="footer">
+				<h4>Copyright@someya 2016</h4>
+			</div>
+		</div>
+		<!-- <script src="../../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script> -->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script> <!-- 3.1.0だと動かない！ -->
+		<script src="../../../commonlib/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	</body>
+</html>

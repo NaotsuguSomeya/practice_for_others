@@ -1,0 +1,65 @@
+/*
+ h1などに組み込まれているスタイル
+ →User Agent Stylesheet
+   ※ブラウザごとに仕様が異なる
+
+ reset.css : User Agent Stylesheetをクリアする
+ normalize.css : User Agent Stylesheetの必要なところだけ採用
+*/
+body {
+	/*background: slategray;*/
+}
+#eyecatch {
+	background: url(../image/free-wallpaper-1.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 70%;
+	height: 100px;
+}
+.container {
+	width: 500px;
+	margin: 0 auto;
+	/*background: pink;*/
+}
+header {
+	background: tomato;
+}
+
+main {
+	background: skyblue;
+}
+/*#left, #right {
+	padding: 10px;
+	box-sizing: border-box;
+}*/
+#left {
+	background: limegreen;
+	float: left;
+	width: 100px;
+	margin-right: 10px;
+}
+#center {
+	background: seagreen;
+	float: left;
+	width: 280px;
+	/*margin-right: 10px;*/
+}
+#right {
+	background: lightgreen;
+	/*float: left;*/
+	float: right;
+	width: 100px;
+}
+/* floatの回り込みを解除１*/
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+/* floatの回り込みを解除２*/
+.clear {
+	overflow: hidden;
+}
+footer {
+	clear: both;
+	background: slategray;
+}

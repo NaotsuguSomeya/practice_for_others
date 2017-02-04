@@ -1,0 +1,52 @@
+/*
+ 擬似クラス2
+ - not
+ - empty : 空の要素
+ - disabled
+ - enabled
+*/
+li:not(.target) { /* class="target"以外 */
+	background: violet;
+}
+li:empty {
+	background: green;
+}
+input[type="text"]:enabled {
+	background: red;
+}
+input[type="text"]:disabled {
+	background: blue;
+}
+input[type="checkbox"]:checked  + label {
+	background: gold;
+}
+/*
+角丸
+*/
+div {
+	width: 80px;
+	height: 80px;
+	background: skyblue url('../../commonlib/image/logo.png');
+	/*border-radius: 10px;*/
+	/*border-radius: 10px / 5px; /* 楕円 */
+	/*border-top-left-radius: 10px;/* 一箇所 */
+	/*border-radius: 10px 20px 30px; /* 左上 / 右上・左下 / 右下 */
+	border-radius: 50%; /* 円 */
+}
+/*
+ 背景画像
+*/
+body {
+	margin: 0;
+}
+header {
+	width: 100%;
+	height: 130px;
+	background:
+		url('free-wallpaper-1.jpg') no-repeat skyblue;
+	/*background-size: 50%;*/
+	/*background-size: 50% 100%;*/
+	/*background-size: cover; /* はみ出た部分は表示されない */
+	background-size: contain; /*必ず全部出る*/
+	background-position: 50% 50%;
+}

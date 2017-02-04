@@ -1,0 +1,94 @@
+Database >
+	Collection(Table) >
+		Document(Record) : データの構造は決めなくて良い
+
+＜Database＞
+・show dbs;
+	- local : デフォルトDatabase
+・use <mydb>;
+  - Collectionを作らないとDBの実体はない
+・db.dropDatabase()
+
+＜Collection＞
+・db.createCollection("<collection name>")
+・db.stats();
+	- 現在のdbの状態
+・show collections;
+・db.users.renameCollection("customers");
+・db.customers.drop()
+
+＜Document＞
+・db.users.insert({データ構造})
+	- {データ構造} : JSON
+	- ex) db.users.insert({name: "someya", score:90});
+	- ex) db.users.insert({name: "yocchan", tag:["web","mobile"]});
+・JavaScriptがそのまま使える
+	- ex) for (var i = 0; i<10; i++){
+					db.users.insert({name: "user-"+i, score:(i*10)});
+				}
+・db.users.count();
+・db.users.remove({}); <-空オブジェクトを渡すと全件削除
+・db.users.find();
+
+[抽出条件]
+・db.users.find({score: 10});
+・db.users.find({score: {$gte: 50}}); <-50以上:greater than equall
+	- $gt, $lt, $lte
+	- $eq, $ne
+	- $or
+	- $in
+	- $exists
+	・db.users.find({score: {$eq: 10}});
+・db.users.find({name: /2/}) <-正規表現
+・db.users.find({name: /^user/}) <-前方一致
+・db.users.distinct("score");
+・db.users.find({name: /^user/, score: {$gte: 50}});
+・db.users.find({$or: [{name: /^user/}, {score: {$gte: 50}}]});
+・db.users.find({score: {$in: [50,60,70]}});
+・db.users.find({tag: {$exists: true}});
+・db.users.find({tag: {$exists: 1}}); <- true(1)/false(0)
+
+[抽出フィールド指定] : 第２引数に指定 <- true(1)/false(0) : trueとfalseは混在できない
+・db.users.find({}, {name: true, score:true});
+・db.users.find({}, {name: false, score:false});
+・db.users.find({}, {name: true, _id:false}); <- _idの場合はtrueとfalseは混在できる
+
+[並び替え、件数絞り、スキップ]
+・db.users.find({}, {_id:0}).sort({score: 1}); <- 昇順(1)
+・db.users.find({}, {_id:0}).sort({score: -1}); <- 降順(-1)
+・db.users.find({}, {_id:0}).limit(3)
+・db.users.find({}, {_id:0}).sort({score: 1}).limit(3);
+・db.users.findOne({}, {_id:0}); <- findOne:1件だけ抽出
+・db.users.find({}, {_id:0}).skip(2); <- 2件スキップ
+
+[更新:$set]
+・db.users.update({name: "someya"}, {$set: {score: 1000}}); <- 同じnameが存在する場合は最初の1件のみ更新
+・db.users.update({name: "someya"}, {$set: {score: 1000, team: "team-2"}});
+・db.users.update({name: "someya"}, {name: "chome", score: 1000, team: "team-2"}); <- 全フィールド更新
+ 	ex) db.users.insert({name: "someya", score:90});
+ 	ex) db.users.insert({name: "someya", score:200});
+・db.users.update({name: "someya"}, {$set: {score: 1000}}, {multi: true}); <-multi:該当レコード全部
+
+[更新:$inc､$mul､$rename､$unset]
+・db.users.update({name: "chome"}, {$inc: {score: 5}}); <- scoreを+5
+・db.users.update({name: "chome"}, {$inc: {score: -25}}); <- scoreを-5
+・db.users.update({name: "chome"}, {$mul: {score: 2}}); <- scoreを*2
+・db.users.update({name: "chome"}, {$rename: {score: "point"}}); <-scoreをpointに変更
+・db.users.update({name: "chome"}, {$set: {mail: "chome@gmail.com"}}); <-フィールド追加
+・db.users.update({name: "chome"}, {$unset: {team: ""}}); <-フィールド削除（値はなんでもOK）
+
+[登録更新・削除:upsert()､remove()]
+・db.users.update({name: "xxx"}, {name: "yyy", score: 99}, {upsert: true}); <-登録＆更新（※upsertがないと登録されない）
+・db.users.remove({name: "yyy"});
+
+[Index]
+・db.users.get.getIndexes();
+・db.users.get.createIndex({_id: 1});
+・db.users.get.createIndex({score: -1}); <- 降順
+・db.users.get.dropIndex("score_-1");
+・db.users.get.createIndex({name: 1}, {unique: true}); <-ユニークKey
+
+[バックアップ・復元]
+・mongodump -d mydb
+・mongorestore --drop  <- --drop : すでにあるdbをdrop
+・mongodump --help

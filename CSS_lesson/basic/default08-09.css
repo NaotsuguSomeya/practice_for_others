@@ -1,0 +1,36 @@
+/*
+	セレクタの詳細度
+	…複数の同名のセレクタがあった場合に優先度を決める
+	(a):style
+	(b):id
+	(c):id以外の属性/擬似クラス
+	(d):要素/擬似要素
+	(a)>(b)>(c)>(d):当てはまる度に１がカウントアップされ優先度が決まる
+*/
+/* 0.0.0.1*/
+a {color : skyblue;}
+/*a {color : skyblue!important}/* !importantで明示的に再優先にする*/
+/* 0.0.1.1*/
+a.link {color : red;}
+/* 0.0.1.1 同じ詳細度だと後から書いたほうが優先される*/
+a.link {color : orange;}
+/* 0.1.0.1*/
+a#site {color : green;}
+
+/*
+	値
+	- 長さ
+		- px
+		- em:親要素のpxに対して何倍か
+		- %:親要素のpxに対して何％か
+	- 色
+		- 名前
+		 - RGB : #0-f / #00-ff / #0-255 / #0%-100%
+			- Red
+			- Green
+			- Blue
+*/
+body { font-size: 16px; color:#00f;}
+h1 { font-size: 3em; color:#00ff00} /* 16*2=32px*/
+h4 { font-size: 150%; color:rgb(255, 0, 0)} /* 16*1.5=24px*/
+/*h4 { font-size: 150%; color:rgb(100%, 0%, 0%)} */

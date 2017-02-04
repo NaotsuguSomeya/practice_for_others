@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrapの練習</title>
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+		<div class="container" style="padding:20px 0;">
+			<p>
+				<i class="glyphicon glyphicon-file">File</i>
+			</p>
+			<button class="btn btn-primary"><i class="glyphicon glyphicon-file"></i>Push Me !</button>
+			<hr>
+			<!-- btn-group : ボタンをくっつける -->
+			<div class="btn-group">
+				<button class="btn btn-primary">Push Me !</button>
+				<button class="btn btn-success">Push Me !</button>
+				<button class="btn btn-info">Push Me !</button>
+			</div>
+			<hr>
+			<div class="btn-group">
+				<!-- dropdownメニュー: class="dropdown-toggle" + data-toggle="dropdown" -->
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						Action <span class="caret"></span> <!-- class="caret" : 下矢印 -->
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#">action</a></li>
+					<li><a href="#">action</a></li>
+					<!-- リストの区切り線 -->
+					<li class="divider">action</li>
+					<li><a href="#">action</a></li>
+				</ul>
+			</div>
+			<hr>
+			<div class="btn-group">
+				<button class="btn btn-primary">Action</button>
+				<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu">
+					<li><a href="#">action</a></li>
+					<li><a href="#">action</a></li>
+					<li class="divider">action</li>
+					<li><a href="#">action</a></li>
+				</ul>
+			</div>
+			<hr>
+			<!-- breadcrumb : パンくず -->
+			<div class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">User</a></li>
+				<!-- active : 今いるところ -->
+				<li class="active">よっちゃん</li>
+			</div>
+			<hr>
+			<!-- pagenation : ページング -->
+			<ul class="pagination">
+				<!-- disabled : 無効 -->
+				<li class="disabled"><a href="#">&laquo;</a></li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<!-- active : 今いるページ -->
+				<li class="active"><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">&raquo;</a></li>
+			</ul>
+			<hr>
+			<!-- pager : ページング(次へ前へ) →ページの両端にできる-->
+			<ul class="pager">
+				<!-- disabled : 無効 -->
+				<li class="previous"><a href="#">前へ</a></li>
+				<li class="next"><a href="#">次へ</a></li>
+			</ul>
+		</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

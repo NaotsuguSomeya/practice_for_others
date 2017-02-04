@@ -1,0 +1,68 @@
+[Ctrl、Meta]
+Meta : alt?
+
+[起動]
+emacs
+
+[終了]
+C-x C-c
+
+[画面の見方]
+- Window: 画面
+- Mode Line: 今開いているバッファの情報
+- Mini Buffer: コマンドの情報
+
+[ファイル操作]
+Open: C-x C-f
+Save: C-x C-s
+Save as : C-x C-w
+
+[移動]
+左右
+foward : C-f
+back : C-b
+上下
+previous : C-p
+next : C-n
+行頭 : C-a
+行末 : C-e
+ファイル先頭 : M-<
+ファイル最後 : M->
+
+[編集]
+範囲指定開始 : C-@
+コピー : M-w
+カット : C-w
+貼り付け : C-y
+行末までカット : C-k
+削除 : C-d
+Undo : C-x u
+
+[検索]
+前方検索 : C-s(次の検索へ)
+後方検索 : C-r(前の検索へ)
+Enter or C-gで検索モードを抜ける
+
+[置換]
+M-% (y/n/!/q)※!:all
+
+[分割]
+C-x 2 : 上下
+C-x 3 : 左右
+C-x 0 : 今のウィンドウを閉じる
+C-x 1 : 分割を解除
+C-x o : ウィンドウ間移動
+
+[Bufferリスト]
+C-x C-b
+	n, p : 上下フラグ
+	d : delete flag
+	s : save flag
+	u : undo
+	x : run
+
+[設定ファイル]
+~/.emacs.d/init.el
+(show-paren-mode t)
+(display-time)
+C-x C-e : 反映

@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Enter your ID & PassWord"
+AuthUserFile /home/naotsugu/apps/wk/PHP_lesson/inquiry_system/admin/.htpasswd
+require valid-user

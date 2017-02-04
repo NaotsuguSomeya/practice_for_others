@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>jQueryプラグインの練習</title>
+	</head>
+	<body>
+		<!-- カスタムデータ属性: data-xxx -->
+		<p><img src="../../../commonlib/image/free-wallpaper-1.jpg" data-size="50"/></p>
+		<p><img src="../../../commonlib/image/free-wallpaper-2.jpg"/></p>
+		<p><img src="../../../commonlib/image/free-wallpaper-3.jpg" data-size="30"/></p>
+
+		<script src="../../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="./jquery.showsize.js"></script>
+		<script>
+			$(function() {
+				$('img').showsize({
+					// オプション
+					// size: 20,
+					// opacity: .2
+				});
+			});
+		</script>
+	</body>
+</html>

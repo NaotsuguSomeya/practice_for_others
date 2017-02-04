@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SVGの練習</title>
+  </head>
+  <body>
+    <svg width="300" height="150">
+      <rect width="300" height="150" fill="blue"/>
+      <circle cx="50" cy="50" r="20" fill="white">
+        <!-- attributename:動かしたい対象 -->
+        <!-- dur:変化が完了するまでの時間 -->
+        <!-- repeatcount:アニメーションする回数 ※indefinite:無限 [注]Edgeだと動かない-->
+        <animate attributename="r" from="20" to="80" dur="2s" repeatcount="indefinite"/>
+      </circle>
+      <circle cx="250" cy="50" r="20" fill="yellow">
+        <!-- begin:アニメーションが起動するまでの時間 -->
+        <animate attributename="r" from="5" to="20" dur="2s" begin="1s" repeatcount="indefinite"/>
+      </circle>
+    </svg>
+    <hr>
+    <svg width="300" height="150" onload="
+        var c = document.getElementsByTagName('circle');
+        for (var i=0; i<c.length; i++){
+          c[i].setAttribute('cx', r(300));
+          c[i].setAttribute('cy', r(200));
+          c[i].setAttribute('r', r(10));
+          c[i].setAttribute('fill', 'rgb('+ r(255) +','+ r(255) +','+ r(255) +')');
+        }
+        function r(n){
+          return Math.floor(Math.random() * (n + 1));
+        }
+    ">
+      <rect width="300" height="150" fill="blue"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+      <circle cx="50" cy="50" r="20" fill="white"/>
+    </svg>
+  </body>
+</html>

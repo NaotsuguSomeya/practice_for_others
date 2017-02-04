@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>正規表現の練習</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var s = '@someya, @yocchan, @u-chan';
+			// スラッシュで囲う
+			var rs;
+			rs = s.match(/s[abco]meya/);
+			if (rs) {
+				console.log('マッチ！[1]');
+			}
+			// メタ文字
+			// [abc] : a,b,cのどれか１文字
+			// [a-z] : a〜zのどれか１文字
+			// [^abc] : a,b,cでないどれか
+			// . : 任意の１文字
+			// ^ : 行頭（単体で使う※否定とは違う）
+			// $ : 行末
+			rs = s.match(/s....a/);
+			if (rs) {
+				console.log('マッチ！[2]');
+			}
+			rs = s.match(/^@s/);
+			if (rs) {
+				console.log('マッチ！[3]');
+			}
+			rs = s.match(/chan$/);
+			if (rs) {
+				console.log('マッチ！[4]');
+			}
+			// {} : 直前の文字の繰り返し回数
+			// 0{2} : 00
+			// 0{2,} : 2文字以上 00 000 0000000...
+			// 0{2, 4} : 2〜4文字 00 000 0000
+			// [a-z]{5} : 英小文字が5桁
+			// ? : 0 or 1 -> a? : aがあるかないか
+			// * : 0 or more (0文字以上の直前の文字)
+			// + : 1 or more (1文字以上の直前の文字)
+			// () : 繰り返し -> (abc)* : abc, abcabc
+			// | : or -> (abc|def) : abc, def
+			// \n : 改行
+			// \t : タブ
+			// \d : 数値 = [0-9]
+			// \w : 英数字+"_" = [A-Za-z0-9_]
+			// \s : スペースorタブ
+			// \メタ文字 : メタ文字のエスケープ
+			// フラグ（オプション）:i, g, m
+			// i : 大文字小文字を区別しない
+			// g : すべてのマッチした要素を配列で返す
+			// m : 複数行に対応 -> ^ $ と合わせて使う（検索文字列に改行コードがふくまれていた場合）
+			rs = s.match(/a/g);
+			console.log(rs);
+			// * + のあとの ? : 最小マッチをさせる
+			rs = s.match(/.+?chan/);
+			console.log(rs);
+			// () RegExp : ()で指定した値をRegExpで取り出す
+			s = 'someya@gmail.com'
+			rs = s.match(/(.+?)@gmail.com/);
+			console.log(RegExp.$1);
+			rs = s.match(/(.+?)@gmail(.com)/);
+			console.log(RegExp.$2);
+			rs = s.match(/((.+?)@gmail(.com))/);
+			console.log(RegExp.$1);
+			// TweeterID
+			s = '@someya';
+			rs = s.match(/(@[A-Za-z0-9_]{1,15})/);
+			console.log(RegExp.$1);
+			// タイトルタグ抽出
+			s = '<title>タイトル</title>';
+			rs = s.match(/<title>([^<]+)<\/title>/);
+			console.log(RegExp.$1);
+			// 日付を日本語表記になおす
+			var s = '2016-09-10'; // 2016年09月10日にする
+			rs = s.match(/(\d{4})[-\/](\d{2})[-\/](\d{2})/);
+			console.log(RegExp.$1 + '年' + RegExp.$2+'月' + RegExp.$3 + '日');
+		</script>
+	</body>
+</html>

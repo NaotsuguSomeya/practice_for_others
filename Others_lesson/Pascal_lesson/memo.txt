@@ -1,0 +1,11 @@
+[FreePascalインストール]
+	sudo apt-get install fpc
+
+[バージョン確認]
+	fpc -iV
+
+[コンパイル]
+fpc xxxx.pas
+※警告↓は無視
+/usr/bin/ld.bfd: 警告: link.res には出力セクションが含まれます。-T
+プションを忘れていませんか?

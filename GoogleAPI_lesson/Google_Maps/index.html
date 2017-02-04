@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Google Mapsの練習</title>
+		<style media="screen">
+			#map {
+				/* 100%/100%だとブラウザ表示できない */
+				width: 100%;
+				height: 750px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			住所：
+			<input type="text" id="adress" value="">
+			<input type="button" id="btn" value="表示">
+		</p>
+		<div id="map"></div>
+		<script src="../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDJ9nTyWoCRCC7Gsm2NNza8dAuVvYVnSCA&language=ja&callback=initMap"
+		async defer></script>
+		<script type="text/javascript">
+			var map;
+			function initMap(){
+				var latLng = new google.maps.LatLng(35.66, 139.69);
+				var opt = {
+					zoom : 15,
+					center : latLng
+				}
+				map = new google.maps.Map(document.getElementById('map'), opt);
+
+				// 現在地の地図
+				if (navigator.geolocation) {
+					navigator.geolocation.getCurrentPosition(function(position){
+						map.setCenter(new google.maps.LatLng(position.coords.latitude,position.coords.longitude));
+					}, function(){
+						alert('現在地を取得できません！');
+					});
+				} else {
+					alert('ブラウザが対応していません！');
+				}
+			}
+		</script>
+	</body>
+</html>

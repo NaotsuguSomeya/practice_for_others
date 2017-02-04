@@ -1,0 +1,45 @@
+/*
+[z-index]:要素の重なり具合
+　※デフォルトでは後に書いた要素が前に来る（box3->box2->box1）
+	- position:static以外の要素
+	- 値が大きいほど上に来る
+[overflow]:はみだした部分についての取り扱い
+	- visible
+	- hidden
+	- scroll
+*/
+body {margin: 0;}
+#box1, #box2, #box3{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+}
+#box1 {
+	background: gray;
+	top: 210px;
+	left: 10px;
+	z-index: 3;
+	overflow: scroll;;
+}
+#box2 {
+	background: silver;
+	top: 220px;
+	left: 20px;
+	z-index: 1;
+}
+#box3 {
+	background: orange;
+	top: 230px;
+	left: 30px;
+	z-index: 2;
+}
+/*
+line-height : ボックス内の行間
+vertical-align : ボックス内の縦位置
+*/
+p {
+	border: 1px solid #ddd;
+	font-size: 18px;
+	/*line-height: 24px;*/
+	line-height: 1.5; /* font-sizeに対して何倍か*/
+}

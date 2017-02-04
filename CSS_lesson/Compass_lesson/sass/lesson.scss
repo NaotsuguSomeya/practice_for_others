@@ -1,0 +1,32 @@
+@import 'compass';
+
+.sample01 {
+	@include border-radius(3px);
+}
+.sample02 {
+	@include opacity(0.5);
+}
+.sample03 {
+	// @include box-shadow();
+	@include box-shadow(0 0 1px #ccc);
+}
+.sample04 {
+	@include rotate();
+}
+.sample05 {
+	@include clearfix;
+}
+$pad: 10px;
+.sample06 {
+	// ファイル名はパスなしでOK。config.rbの場所に置く
+	width: image-width("cat01.jpg") + ($pad * 2);
+}
+// css sprite
+// アイコンが結合される→背景などに使う
+@import "icons/*.png";
+@include all-icons-sprites;
+.sample07 {
+	@include clearfix;
+}
+// 個々の画像はclassで呼び出せる
+// <div class="icons-tnm_resize"></div

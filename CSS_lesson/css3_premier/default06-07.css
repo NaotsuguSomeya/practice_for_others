@@ -1,0 +1,41 @@
+/*
+ 擬似クラス
+ <要素が隣接している場合>
+ - :first-child
+ - :last-child
+ - :nth-child
+ - :only-child
+ <要素が離れている場合>
+ - :first-od-type
+*/
+li:last-child {
+	background: orange;
+}
+
+/*li:nth-child(3){*/
+/*li:nth-child(even){ /*odd:奇数 even:偶数*/
+li:nth-child(3n+1){ /* 1, 4, 7 ...*/
+	background: violet;
+}
+li:nth-last-child(4) {/* 最後から数えてn番目 */
+	background: blue;
+}
+li:only-child { /* 子要素が１つだけの場合にてきよう */
+	background: red
+}
+
+p:first-of-type {
+	background: violet;
+}
+p:last-of-type {
+	background: red;
+}
+p:nth-of-type(3){
+	background: green
+}
+p:nth-last-of-type(4){
+	background: yellow;
+}
+h2:only-of-type {
+	background: blue;
+}

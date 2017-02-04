@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>JQuery UIの練習</title>
+		<link rel="stylesheet" href="../../../commonlib/jquery-3.1.0/jquery-ui.css">
+		<link rel="stylesheet" href="../../../commonlib/jquery-3.1.0/jquery-ui.structure.css">
+		<link rel="stylesheet" href="../../../commonlib/jquery-3.1.0/jquery-ui.theme.css">
+		<style media="screen">
+			.box1 {
+				width: 80px;
+				height: 50px;
+				background: lightgreen;
+				font-size: 12px;
+			}
+			.box2 {
+				width: 50px;
+				height: 50px;
+				background: lightgrey;
+				font-size: 14px;
+				margin-top: 5px;
+			}
+			.box3 {
+				width: 80px;
+				height: 80px;
+				background: pink;
+				font-size: 14px;
+				margin-top: 5px;
+			}
+			.box4 {
+				width: 50px;
+				height: 50px;
+				background: violet;
+				font-size: 14px;
+				margin-top: 5px;
+			}
+			.hover {
+				background: red;
+			}
+			/*選ぶとjQueryUIが自動的につける*/
+			.ui-selected {
+				background: red;
+			}
+			#ef-box {
+				width: 100px;
+				height: 100px;
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="ef-box">effect box</div>
+		<div id="tabs">
+			<ul>
+				<!-- リンク先のdivのidに合わせる -->
+				<li><a href="#menu1">Menu1</a></li>
+				<li><a href="#menu2">Menu2</a></li>
+				<li><a href="#menu3">Menu3</a></li>
+			</ul>
+			<div id="menu1">menu 1</div>
+			<div id="menu2">menu 2</div>
+			<div id="menu3">menu 3</div>
+		</div>
+		<div id="bar" style="width:200px"></div>
+		<br>
+		<div id="slider" style="width:200px;margin-top:20px;"></div>
+		<br>
+		<button id="btn-dialog">dialog!</button>
+		<div id="msg">
+			こんにちは！
+		</div>
+		<br>
+		<input type="text" id="datepicker">
+		<br>
+		<button id="btn-click">click!</button>
+		<input type="checkbox" id="check"><label for="check">check</label>
+		<br>
+		<!-- divで囲うとボタンセットが作れる -->
+		<div id="set">
+			<input type="radio" name="radio" id="radio1"><label for="radio1">radio 1</label>
+			<input type="radio" name="radio" id="radio2"><label for="radio2">radio 2</label>
+			<input type="radio" name="radio" id="radio3"><label for="radio3">radio 3</label>
+		</div>
+		<br>
+		<input type="text" id="langs">
+		<!-- 見出し要素と隣接する要素を作る -->
+		<div id="accordion">
+			<h3><a href="#">Title</a></h3>
+			<div>こんにちは</div>
+
+			<h3><a href="#">Title</a></h3>
+			<div>こんにちは</div>
+
+			<h3><a href="#">Title</a></h3>
+			<div>こんにちは</div>
+
+			<h3><a href="#">Title</a></h3>
+			<div>こんにちは</div>
+
+		</div>
+		<ul id="selectable">
+			<li id="item1">select item1</li>
+			<li id="item2">select item2</li>
+			<li id="item3">select item3</li>
+			<li id="item4">select item4</li>
+			<li id="item5">select item5</li>
+		</ul>
+		<ul id="sortable">
+			<!-- idは"xxx_n"の連番にすること -->
+			<li id="sitem_1">sort item1</li>
+			<li id="sitem_2">sort item2</li>
+			<li id="sitem_3">sort item3</li>
+			<li id="sitem_4">sort item4</li>
+			<li id="sitem_5">sort item5</li>
+		</ul>
+		<div class="box1">box1
+			<div class="handle">
+				drag here!
+			</div>
+			<div class="cancel">
+				cannot here!
+			</div>
+		</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<script src="../../../commonlib/jquery-3.1.0/jquery-3.1.0.js"></script>
+		<script src="../../../commonlib/jquery-3.1.0/jquery-ui.js"></script>
+		<script src="../../../commonlib/coffee-script.js"></script>
+    <script src="./script.coffee" type="text/coffeescript"></script>
+	</body>
+</html>

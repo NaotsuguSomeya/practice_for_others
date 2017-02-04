@@ -1,0 +1,9 @@
+[WebSocket]
+サーバーとブラウザ間のリアルタイム双方向通信
+	- push通信、チャット、オンラインゲームなど
+
+[インストール]
+	npm install socket.io
+
+[デバッグモード]
+	DEBUG=socket.io:* node ./app.js

@@ -1,0 +1,10 @@
+- someya
+- 52
+- 33.5
+- true
+# 真偽値：true/false, yes/no, on/off
+- null
+# ~（チルダでもOK）
+- 2016-09-08
+- "true"
+- '555'

@@ -1,0 +1,12 @@
+# マッピング、ハッシュ
+# :の後の半角スペース必須！(いくつでもOK)
+# name:  someya
+# score: 100
+
+# {name: someya, score: 111}
+
+# 入れ子
+name: someya
+score:
+  game1: 100
+  game2: 200

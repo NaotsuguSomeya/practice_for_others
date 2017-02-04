@@ -1,0 +1,75 @@
+1. Nomal mode -> Insert mode(i)
+2. Command mode(:) -> ESC to Normal -> ESC to Nomal
+3. Visual mode(v) -> ESC to Nomal
+
+# MOVE(Nomal mode)
+1. gg : move to first
+2. G : move to last
+3. ctrl+f : Next page
+4. ctrl+b : Previous Page
+5. w : move next word
+6. b : move previous word 
+7. ^ : move to first of line
+8. $ : move to last of the line
+9. f+(word) : jump to the word in the line
+   ; : jump to the next word in same line
+10. % : jump to relation of the () {} []...  
+
+# SELECTION(Visual mode)
+1. V : select the line
+2. ctrl+v : short form for selection
+3. gg + V + G : whole for selection
+
+# CUT, COPY, PASTE(Nomal mode)
+1. x : cut one word
+2. dd : cut the line
+3. 3dd : cut the 3 lines
+4. p : paste
+5. yy : copy the line
+6. 3yy : copy 3 lines
+
+# SEARCH(/)
+1. n : search to down
+2. N : seacrh to up
+3. *, # : search the word in this line(*:down, #:up)
+
+# Substitute(:s)
+1. :s/fromWORD/toWORD : substitute one chractor in this line
+2. :s/fromWORD/toWORD/g : substitute all charactors in this line
+3. :%s/fromWORD/toWORD/g : substitute all charactors in this file
+4. :%s/fromWORD/toWORD/gc : substitute all chractors in this file with confirm
+
+# UNDO, REDO
+1. u :UNDO
+2. ctrl+r : REDO
+
+# Window spirit
+1. sp : window spirit
+ 1) ctrl+w+w : move another window
+2. vs : window virtual spirit
+
+# Tab mode
+1. :tabnew
+2. :tabe <file name>
+3. g+t : move next tab
+4. tabclose : close the tab
+5. vim -p <file1> <file2> : open 2 files for tab mode(command line)
+6. :tabdo <command> : command do in the all tab files
+
+# other
+1. . : repeat previous action
+2. = : indent shape
+3. ctrl+n : Completion the used word
+4. ctrl+v -> shift+i : short form insertion
+5. ctrl+v -> x : short form deletion
+6. set number <-> set nonumber
+7. tabstop=n : tab string number->n
+8. set ignorecase : search string with case sencitive off
+   <-> set noigonorecase
+
+# text object
+c/d/y : change(delete/insert)
+i/a : inner/all 
+t/"/)/}/] : t->tag 
+
+

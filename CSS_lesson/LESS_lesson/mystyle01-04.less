@@ -1,0 +1,28 @@
+/*
+	複数コメント
+	複数コメント
+	複数コメント
+*/
+// １行コメント(cssファイルに反映されない)
+
+// @mycolor: blue;
+@h1-mycolor: red;
+@h2-mycolor: darken(@h1-mycolor, 20%); // darken/lighten
+@h1-size: 24px;
+@h2-size: @h1-size - 4px; // 四則演算可能
+
+@dir: "/imag";
+
+// @header: h;
+@header: .myheader;
+
+@{header}1 {
+	font-size: @h1-size;
+	color: @h1-mycolor;
+}
+
+@{header}2 {
+	font-size: @h2-size;
+	color: @h2-mycolor;
+	background: url("@{dir}/sample.png");
+}

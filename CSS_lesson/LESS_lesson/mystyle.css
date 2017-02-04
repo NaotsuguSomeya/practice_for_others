@@ -1,0 +1,26 @@
+.button,
+.button-ok,
+.button-ng {
+  font-size: 14px;
+  border: 1px solid #000;
+}
+.button-ok {
+  color: green;
+}
+.button-ng {
+  color: red;
+}
+.button2 {
+  font-size: 14px;
+  border: 1px solid #000;
+}
+.button2-ok {
+  font-size: 14px;
+  border: 1px solid #000;
+  color: green;
+}
+.button2-ng {
+  font-size: 14px;
+  border: 1px solid #000;
+  color: red;
+}

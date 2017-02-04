@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>Font Awesomeの練習</title>
+		<style>
+			body {
+				background: #ccc;
+			}
+			.my_icon {
+				font-size: 10px; /*ここだと変わらない（タグに直接指定）*/
+				color: red;
+				text-shadow: -1px 1px 0 rgba(0, 0, 0, .5);
+			}
+		</style>
+	</head>
+	<link rel="stylesheet" href="./font-awesome-4.6.3/css/font-awesome.css">
+	<body>
+		<!-- Font Awesome : Webフォント→大きさ、色変更が容易 -->
+		<p><i class="fa fa-gitlab" aria-hidden="true"></i> : github</p>
+		<!-- fa-lg : 33%拡大 -->
+		<p><i class="fa fa-gitlab fa-lg" aria-hidden="true"></i> : github</p>
+		<!-- fa-nx : n倍（2〜5）拡大 -->
+		<p><i class="fa fa-gitlab fa-3x" aria-hidden="true"></i> : github</p>
+		<!-- iタグ以外でもOK -->
+		<p><span class="fa fa-gitlab fa-5x" aria-hidden="true"></span> : github</p>
+		<!-- styleをつける -->
+		<p><i class="fa fa-html5 my_icon" style="font-size:48px"></i> : html5</p>
+
+		<!-- リスト系 -->
+		<ul>
+			<li><i class="fa fa-home"></i> menu 1</li>
+			<li><i class="fa fa-caret-left"></i> menu 2</li>
+			<li><i class="fa fa-bar-chart"></i> menu 3</li>
+		</ul>
+		<!-- fa-fw : 幅を揃える -->
+		<!-- fa-ul,fa-li : 黒丸をアイコンで置き換える -->
+		<ul class="fa-ul">
+			<li><i class="fa fa-home fa-fw fa-li"></i> menu 1</li>
+			<li><i class="fa fa-caret-left fa-fw fa-li"></i> menu 2</li>
+			<li><i class="fa fa-bar-chart fa-fw fa-li"></i> menu 3</li>
+		</ul>
+
+		<!-- アイコン回転 -->
+		<!-- fa-rotate-nn : nn度回転 (90,180,270) -->
+		<p><i class="fa fa-apple fa-rotate-90"></i> : Apple(fa-rotate-90)</p>
+		<p><i class="fa fa-apple fa-rotate-180"></i> : Apple(fa-rotate-180)</p>
+		<p><i class="fa fa-apple fa-rotate-270"></i> : Apple(fa-rotate-270)</p>
+		<!-- 左右反転 -->
+		<p><i class="fa fa-apple fa-flip-horizontal"></i> : Apple(fa-flip-horizontal)</p>
+		<!-- 上下反転 -->
+		<p><i class="fa fa-apple fa-flip-vertical"></i> : Apple(fa-flip-vertical)</p>
+
+		<!-- アニメーション -->
+		<p><i class="fa fa-refresh fa-spin"></i></p>
+		<p><i class="fa fa-spinner fa-spin"></i></p>
+		<!-- fa-pulse : 8段階に動く -->
+		<p><i class="fa fa-spinner fa-pulse"></i></p>
+
+		<!-- 枠線､左右寄せ -->
+		<!-- pull-right : float:rightしているだけ -->
+		<p><i class="fa fa-apple pull-right"></i></p>
+		<p><i class="fa fa-apple fa-border fa-5x" style="border-color:skyblue;"></i></p>
+
+		<!-- アイコンを重ねる -->
+		<p>
+			<span class="fa-stack">
+				<i class="fa fa-square-o fa-stack-2x"></i>
+				<i class="fa fa-flag fa-stack-1x"></i>
+			</span>
+			flag
+		</p>
+		<p>
+			<span class="fa-stack">
+				<i class="fa fa-square fa-stack-2x"></i>
+				<!-- 色の反転 -->
+				<i class="fa fa-flag fa-inverse fa-stack-1x"></i>
+			</span>
+			flag
+		</p>
+		<p>
+			<span class="fa-stack">
+				<!-- うまくいかん！ -->
+				<i class="fa fa-square fa-stack-2x" style="color:#2b45;"></i>
+				<i class="fa fa-flag fa-stack-1x" style="color:#e1f2f3;"></i>
+			</span>
+			flag
+		</p>
+	</body>
+</html>

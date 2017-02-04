@@ -1,0 +1,14 @@
+[インストール]
+sudo apt install node-less
+
+[バージョン]*LESS Compiler
+lessc -v
+
+[仕組み]
+mystyle.less -> lessc(コンパイラ) -> mystyle.css
+
+[コマンド]
+lessc mystyle.less mystyle.css
+
+ (オプション)
+	-x : 圧縮（インデントなし）

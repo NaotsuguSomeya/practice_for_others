@@ -1,0 +1,10 @@
+[コンパイラーインストール]
+sudo apt-get install gnat
+
+[バージョン]
+gnat make --version
+
+[コンパイル]
+gnat make myapp.adb
+gnatmake myapp.adb
+-> 拡張子なしのファイルが実行ファイル

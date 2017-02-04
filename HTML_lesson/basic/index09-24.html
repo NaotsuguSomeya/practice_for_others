@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf8">
+		<meta name="description" content="これは練習用HTML文書です"> <!-- 文書の説明：検索エンジンに反映 -->
+		<title>HTMLの練習</title>
+	</head>
+	<body>
+		<!--
+		・セクションを区切るタブ
+			header
+			footer
+			nav : ナビゲーションに関するタグ（パンくずリストなど）
+			article : 独立しているコンテンツ（ブログの本文など）
+			aside : 副次的なコンテンツ（補足、広告など）
+			section : article,aside以外の情報のかたまり
+			h1 - h6 : sectionにつける見出し
+
+		・セクションより細かいタグ
+			p : 段落（パラグラフ）
+			ｈｒ : 水平線、罫線（horizen role）
+			pre : 改行、字下げを保持(preformated text)
+			blockquote : 引用
+			div : 意味なし、スタイリングが目的
+
+		・リスト
+			ol : 順番のあるリスト（ordered list）
+			ul : 順番なし、箇条書きリスト（unordered list）
+			li : リスト項目（list item）
+			dl : 定義リスト(definition list)
+			dt : 定義する単語など(definition term)
+			dd : 定義した単語の説明(definition description)
+
+		・その他
+			strong : 重要
+			br : 改行（閉じタグなし）
+			span : 意味なし、スタイリングが目的（改行なし）
+			a : リンク
+			 - href : リンク先URL（ページ内リンクは"#id名"）
+			 - target : 開き方（なし：今のタブ、"_blank":新しいタブ）
+			img : 画像（閉じタグなし）
+			 - src : 画像のリンク先
+			 - alt : 画像が見つからない場合の代替
+
+		・テーブル
+			table
+			thead
+			tbody
+			tr : table row
+			th : table header
+			td : table data
+
+		・フォーム
+			form
+				- action : フォーム内の入力データをどこに送るか
+				- method : get / post
+				- disabled : "true"で入力部品を無効化
+			input : 入力データ
+				- type
+					- text
+					- submit
+					- password
+					- hidden
+				- name : データの名前
+			textarea
+				- col : 幅
+				- rows : 高さ
+			button : [input type="submit"]よりボタンの装飾がリッチになる
+				- type
+					- submit : [input type="submit"]と同じ動き
+					- button : JavaScriptで実装
+
+			checkbox : checkedで初期値 ※Firefoxで効かない？？
+			radio
+			label
+				- for :lavelとチェックボックス・ラジオボタンが離れている場合にidを指定して紐付ける
+
+			select : multiple属性で複数選択可能(デフォルト４つ、size="n"で変更可)
+				- option : selectedで初期値 ※Firefoxで効かない？？
+
+			<HMLL5新属性>
+			form : novalidate属性でform内部品のバリデートを外す
+			input : required属性で必須チェック
+				type
+					- email : submit時に"@"の存在チェック
+					- number : submit時に数値以外でエラー
+					- date : 日付選択ポップアップ ※Firefoxで効かない？？
+
+		・文字参照
+			数値文字参照
+			文字実体参照
+			ex) <
+					数値文字参照: &#60;
+					文字実体参照: &lt;
+
+		・HTML5タグ定義（https://www.w3.org/TR/html5）
+			カテゴリー：どの分類か
+			コンテンツモデル：どのカテゴリーのタグを入れられるか
+				Trance Parents : 親タグのコンテンツモデルを使う
+
+		-->
+		<header>
+			<h1>よっちゃんのおいしいごはん！</h1>
+			<nav>
+				- ホーム
+				- このサイトについて
+				- プロフィール
+			</nav>
+		</header>
+
+		<article>
+			<h1>文字参照</h1>
+			<!-- <p>「<p>タグの段落です」</p> -->
+			<p>「&lt;p&gt;タグの段落です」</p>
+			<!-- <input type="text" value="区切り文字は"です"> -->
+			<input type="text" value="区切り文字は&quot;です">
+			<!-- この記号の文字参照は&quot;です。 -->
+			この記号の文字参照は&amp;quot;です。
+		</article>
+		<section>
+			<h1>今月の美味しいごはん</h1>
+			<article>
+				<h2>おいしいごはん #12</h2>
+				<img src="../../commonlib/image/logo_resize.png" width="20" height="20" alt="うーちゃん">
+				<!-- フォーム -->
+				<div style="background: green;">
+					<h3>アンケート</h3>
+					<form action="survey.php" method="post">
+						<p>お名前： <input type="text" name="username" size="50" maxlength="10" value="Example User"></p>
+						<p>メールアドレス： <input type="email" name="email" size="50" maxlength="50" placeholder="abc@example.com" required></p>
+						<p>料金： <input type="number" name="price"></p>
+						<p>誕生日： <input type="date" name="birthday"></p>
+						<p>パスワード： <input type="password" name="password" size="50" maxlength="10" placeholder="please enter password"></p>
+						<input type="hidden" name="hd_data" value="system12345678">
+						<p>ｗｗ： <input type="text" name="username" size="50" maxlength="10" value="入力できません" disabled="true"></p>
+						<p>
+							コメント：
+							<textarea name="commnet" cols="40" rows="5">コメントを入力してください</textarea>
+						</p>
+						<p>
+							Phone:
+							<label><input type="checkbox" name="phone" value="android" checked="checked"> Android</label>
+							<input type="checkbox" name="phone" value="iphone" id="idiphone"> <label for="idiphone">iPhone</label>
+						</p>
+						<p>
+							Color:
+							<input type="radio" name="color" value="red"> Red
+							<input type="radio" name="color" value="blue" checked="checked"> Blue
+							<input type="radio" name="color" value="yellow"> Yelow
+						</p>
+						<p>
+							City:
+							<select name="city">
+								<option value="tokyo">Tokyo</option>
+								<option value="nagoya">Nagoya</option>
+								<option value="osaka" selected>Osaka</option>
+								<option value="fukuoka">Fukuoka</option>
+							</select>
+						</p>
+						<p>
+							複数City:
+							<select name="multicity" multiple size="5">
+								<option value="tokyo">Tokyo</option>
+								<option value="nagoya">Nagoya</option>
+								<option value="kyoto">Kyoto</option>
+								<option value="osaka" selected>Osaka</option>
+								<option value="fukuoka">Fukuoka</option>
+							</select>
+						</p>
+						<p><button type="submit" disabled="true"><strong>送信(buttonタグ - submit)</strong></button></p>
+						<p><button type="button">送信(buttonタグ - button)</button></p>
+						<p><input type="submit" value="送信(inputタグ)"></p>
+					</form>
+				</div>
+				<!-- テーブル -->
+				<div style="background: yellow;">
+					<table>
+						<thead>
+							<tr>
+								<td>Size</td>
+								<td>Pricetd</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>S</td>
+								<td>100</td>
+							</tr>
+							<tr>
+								<td>M</td>
+								<td>200</td>
+							</tr>
+							<tr>
+								<td>L</td>
+								<td>300</td>
+							</tr>
+							<tr>
+								<td colspan="2">free for kids!</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- div、リンク -->
+				<div style="background:skyblue;">
+				<p>至高のTKG → <a href="more.html" target="_blank">もっと見る！</a> → <a href="#definition">定義に</a></p>
+				<h3>材料</h3>
+				<ul>
+					<li><span style="color:gold;">卵</span></li>
+					<li>しょうゆ</li>
+					<li>ごはん</li>
+				</ul>
+				<h3>手順</h3>
+				<ol>
+					<li>まぜる</li>
+					<li>かける</li>
+				</ol>
+				<h3 id="definition">定義</h3>
+				<dl>
+					<dt>TKG</dt>
+					<dd>Tamago Kake Gohan</dd>
+				</dl>
+				<hr>
+				<p>うーちゃん</p>
+			  </div>
+				<pre>
+				  poem
+				    poem
+					     poem</pre>
+				<blockquote>TKG最高 by chome</blockquote>
+			</article>
+		</section>
+
+		<section>
+			<h1>新着おいしいごはん</h1>
+			<article>
+				<h2>おいしいごはん #32</h2>
+				はもしゃぶ
+			</article>
+			<article>
+				<h2>おいしいごはん #31</h2>
+				スリランカカレー
+			</article>
+		</section>
+		<aside>
+			<h2>おすすめレシピ本</h2>
+			- BOOK1
+			- BOOK2
+			- BOOK3
+		</aside>
+
+		<footer>
+			このサイトは、<strong>よっちゃん</strong>によって運営されています。
+			<br>
+			From <a href="https://www.google.co.jp/">google</a>
+			<br>
+			From <a href="https://www.google.co.jp/" target="_blank">google（"_blank"）</a>
+		</footer>
+	</body>
+</html>

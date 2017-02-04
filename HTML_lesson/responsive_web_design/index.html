@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head lang="ja">
+		<meta charset="utf-8">
+		<!-- viewportの幅をデバイスのスクリーンの幅に合わせる。
+					- スマートフォンのブラウザーの多くは
+						「viewport」と呼ばれる仮想ウィンドウサイズが
+						設定されている。
+		 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>レスポンシブWebデザイン</title>
+		<link rel="stylesheet" href="../../commonlib/reset.css">
+		<link rel="stylesheet" href="./mystyle.css" media="screen" title="no title">
+	</head>
+	<body>
+		<div id="header">
+			<div id="footerNaviLink">
+				<a href="#footerNavi">+</a>
+			</div>
+			<h1>Header</h1>
+			<div id="headerNavi">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- header -->
+		<div id="container">
+			<div id="main">
+				<h2>Main</h2>
+				<img src="../../commonlib/image/logo.png" alt="" />
+				<p>
+					Hello. Hello. Hello. Hello. Hello.
+				</p>
+			</div>
+			<!-- main -->
+			<div id="sub">
+				<h2>Sub</h2>
+				<p>
+					Hello. Hello. Hello. Hello. Hello.
+				</p>
+				<!-- iframeの動画サイズを調整 -->
+				<div style="width: 75\5; margin: 0 auto;">
+					<div class="movie">
+						<iframe src="https://www.youtube.com/embed/Vi2VAENiyKo"></iframe>
+					</div>
+				</div>
+			</div>
+			<!-- sub -->
+		</div>
+		<!-- container -->
+		<div id="footer">
+			<div id="footerNavi">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+			<p>Footer</p>
+		</div>
+		<!-- footer -->
+	</body>
+</html>

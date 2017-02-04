@@ -1,0 +1,15 @@
+/*
+	セレクタ {プロパティ名: 値;}
+	セレクタ {
+		プロパティ名: 値;
+		プロパティ名: 値;
+	}
+	* : ユニバーサルセレクタ
+	要素名 p, h1, divなど
+	#id
+	.class
+*/
+/** { color: lightgreen;}*/
+h1 { color: skyblue;}
+#first { color: lightpink;}
+.points {color: lightgreen}
